@@ -251,44 +251,90 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                <div class="group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-teal-500/30 dark:hover:border-teal-500/50 hover:shadow-xl hover:shadow-teal-500/5 transition-all duration-500 reveal reveal-delay-1 relative overflow-hidden">
+                <div class="scope-card group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-teal-500/30 dark:hover:border-teal-500/50 hover:shadow-xl hover:shadow-teal-500/5 transition-all duration-500 reveal reveal-delay-1 relative overflow-hidden cursor-pointer" role="button" tabindex="0" data-modal-key="framework">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 dark:bg-teal-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
                     <div class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-6 text-teal-600 dark:text-teal-400 group-hover:scale-110 transition-transform duration-500">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
                     <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Framework Evaluation</h4>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Assessing traditional ethical models (Utilitarian, Deontological) against modern computational dilemmas.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-teal-600 dark:text-teal-400">Read more <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
                 </div>
 
-                <div class="group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-blue-500/30 dark:hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500 reveal reveal-delay-2 relative overflow-hidden">
+                <div class="scope-card group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-blue-500/30 dark:hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500 reveal reveal-delay-2 relative overflow-hidden cursor-pointer" role="button" tabindex="0" data-modal-key="data">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 dark:bg-blue-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
                     <div class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-500">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
                     </div>
                     <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Data Integrity</h4>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Analyzing how bias enters datasets and propagates through predictive models causing structural inequality.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-blue-600 dark:text-blue-400">Read more <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
                 </div>
 
-                <div class="group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-500 reveal reveal-delay-3 relative overflow-hidden">
+                <div class="scope-card group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-500 reveal reveal-delay-3 relative overflow-hidden cursor-pointer" role="button" tabindex="0" data-modal-key="societal">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
                     <div class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-500">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                     </div>
                     <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Societal Impact</h4>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Mapping the ripple effects of automated decision systems on marginalized communities and privacy.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-emerald-600 dark:text-emerald-400">Read more <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
                 </div>
 
-                <div class="group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-500/30 dark:hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-500 reveal reveal-delay-3 relative overflow-hidden">
+                <div class="scope-card group bg-slate-50 dark:bg-slate-850 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-500/30 dark:hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-500 reveal reveal-delay-3 relative overflow-hidden cursor-pointer" role="button" tabindex="0" data-modal-key="policy">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 dark:bg-amber-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
                     <div class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-6 text-amber-600 dark:text-amber-500 group-hover:scale-110 transition-transform duration-500">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                     </div>
                     <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Policy &amp; Solutions</h4>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Proposing actionable, mathematically sound fairness metrics and governance structures for future tech.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-amber-600 dark:text-amber-500">Read more <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
                 </div>
             </div>
         </div>
     </section>
+
+    <template id="modal-content-framework">
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/10 text-teal-600 dark:text-teal-400 uppercase tracking-wider">Project Scope</span>
+        <h3 id="detail-modal-heading" class="text-2xl font-bold text-slate-900 dark:text-white mt-3 mb-4">Framework Evaluation</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">We score each automated system we study against three classical ethical lenses: Utilitarian (does the system maximize aggregate well-being?), Deontological (does it respect rules and rights regardless of outcome?), and Virtue Ethics (does it reflect the character a trustworthy institution should have?).</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">No single framework cleanly resolves cases like autonomous-vehicle trade-offs or content-moderation trade-offs between free expression and harm reduction — so our methodology applies all three side by side to the same case studies (recommender systems, risk-assessment tools, and content moderation) and documents where they agree and where they conflict.</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">This comparative scoring becomes the backbone of the Recommendations phase: areas where all three frameworks agree are treated as high-confidence policy targets.</p>
+    </template>
+
+    <template id="modal-content-data">
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 uppercase tracking-wider">Project Scope</span>
+        <h3 id="detail-modal-heading" class="text-2xl font-bold text-slate-900 dark:text-white mt-3 mb-4">Data Integrity</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Bias enters a model long before training begins. We track three distinct failure modes: <strong class="text-slate-800 dark:text-slate-200">historical bias</strong> (the data reflects past discrimination), <strong class="text-slate-800 dark:text-slate-200">measurement bias</strong> (a proxy variable correlates with a protected attribute), and <strong class="text-slate-800 dark:text-slate-200">aggregation bias</strong> (a single model is forced onto sub-populations it doesn't fit equally well).</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Our COMPAS recidivism case study (see the Data Explorer) is a concrete example: the same risk score produces a substantially higher false-positive rate for one demographic group than another, even though race is never an explicit input to the model.</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">We evaluate mitigation techniques including reweighing training samples, adversarial debiasing, and synthetic minority oversampling, and report the accuracy/fairness trade-off each one produces.</p>
+    </template>
+
+    <template id="modal-content-societal">
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Project Scope</span>
+        <h3 id="detail-modal-heading" class="text-2xl font-bold text-slate-900 dark:text-white mt-3 mb-4">Societal Impact</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">A biased model doesn't just produce a wrong answer — it produces a wrong answer that lands disproportionately on already-marginalized communities, and then feeds that outcome back into future training data. We trace these feedback loops across predictive policing, credit scoring, and recommender systems.</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Beyond disparate impact, we examine privacy erosion (what inferences a system makes about people who never consented to them) and chilling effects (how visible automated moderation or surveillance changes what people are willing to say or do).</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">These case studies are sourced from the peer-reviewed literature in our <a href="bibliography.html" class="text-teal-600 dark:text-teal-400 font-medium hover:underline">Bibliography</a>.</p>
+    </template>
+
+    <template id="modal-content-policy">
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-500 uppercase tracking-wider">Project Scope</span>
+        <h3 id="detail-modal-heading" class="text-2xl font-bold text-slate-900 dark:text-white mt-3 mb-4">Policy &amp; Solutions</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Identifying a problem isn't the same as fixing it. We evaluate concrete fairness metrics — demographic parity, equalized odds, and predictive rate parity — and document the trade-offs between them, since no system can satisfy all three simultaneously when base rates differ across groups.</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">On the governance side, we look at existing mechanisms like the GDPR's "right to explanation" and proposed mandatory algorithmic audits, and assess how enforceable they actually are in practice.</p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">This is the area we're actively building out in <a href="index.html#recommendations" class="text-teal-600 dark:text-teal-400 font-medium hover:underline">Phase 5 of our methodology</a> — check back as our recommendations firm up.</p>
+    </template>
+
+    <div id="detail-modal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 sm:p-6">
+        <div id="detail-modal-backdrop" class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
+        <div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-8" role="dialog" aria-modal="true" aria-labelledby="detail-modal-heading">
+            <button id="detail-modal-close" type="button" aria-label="Close" class="absolute top-5 right-5 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div id="detail-modal-body"></div>
+        </div>
+    </div>
 
     <section id="research" class="py-24 bg-slate-50 dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -614,6 +660,47 @@
                         }
                     });
                 }
+            });
+
+            const detailModal = document.getElementById('detail-modal');
+            const detailModalBody = document.getElementById('detail-modal-body');
+            const detailModalBackdrop = document.getElementById('detail-modal-backdrop');
+            const detailModalClose = document.getElementById('detail-modal-close');
+            let lastFocusedCard = null;
+
+            function openDetailModal(key, card) {
+                const template = document.getElementById('modal-content-' + key);
+                if (!template) return;
+                detailModalBody.innerHTML = '';
+                detailModalBody.appendChild(template.content.cloneNode(true));
+                detailModal.classList.remove('hidden');
+                detailModal.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+                lastFocusedCard = card;
+                detailModalClose.focus();
+            }
+
+            function closeDetailModal() {
+                detailModal.classList.add('hidden');
+                detailModal.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+                if (lastFocusedCard) lastFocusedCard.focus();
+            }
+
+            document.querySelectorAll('.scope-card').forEach((card) => {
+                card.addEventListener('click', () => openDetailModal(card.dataset.modalKey, card));
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openDetailModal(card.dataset.modalKey, card);
+                    }
+                });
+            });
+
+            detailModalClose.addEventListener('click', closeDetailModal);
+            detailModalBackdrop.addEventListener('click', closeDetailModal);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !detailModal.classList.contains('hidden')) closeDetailModal();
             });
         });
     </script>
