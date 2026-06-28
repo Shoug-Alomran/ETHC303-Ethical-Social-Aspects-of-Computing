@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ethics-favicon.png">
+    <title>Bibliography | Ethos. CS490 Project</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        teal: {
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                        },
+                        emerald: {
+                            500: '#10b981',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bib-card:hover .bib-actions {
+            opacity: 1;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans antialiased transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center border border-teal-500/30 group-hover:border-teal-500/60 transition-all">
+                        <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight block leading-none">Ethos<span class="text-teal-600 dark:text-teal-400">.</span></span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">CS490 Project</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Home</a>
+                    <a href="index.html#about" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">About</a>
+                    <a href="index.html#project" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Project</a>
+                    <a href="index.html#research" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Research</a>
+                    <a href="index.html#methodology" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Methodology</a>
+                    <a href="index.html#analysis" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Analysis</a>
+
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                            More
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute right-0 w-48 mt-2 origin-top-right bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform scale-95 group-hover:scale-100 p-2 z-50">
+                            <a href="index.html#recommendations" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Recommendations</a>
+                            <a href="index.html#presentation" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Presentation</a>
+                            <a href="index.html#team" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Team</a>
+                            <a href="bibliography.html" class="block px-4 py-2 text-sm text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10 rounded-lg">Bibliography</a>
+                            <a href="dashboard.html" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Data Explorer</a>
+                        </div>
+                    </div>
+
+                    <div class="w-px h-6 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                    <button id="theme-toggle" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-16 pb-12 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl reveal active">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 mb-6">
+                    <span class="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest">References &amp; Literature</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Academic Bibliography</h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+                    A curated collection of foundational texts and contemporary research papers that informed our analysis of algorithmic systems, fairness metrics, and the philosophy of technology.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="sticky top-20 z-40 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-md border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row gap-6 items-center justify-between">
+
+                <div class="relative w-full lg:max-w-md">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </span>
+                    <input type="text" placeholder="Search by author, title, or keyword..." class="block w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all outline-none">
+                </div>
+
+                <div class="flex items-center gap-2 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Filter:</span>
+                    <button class="px-4 py-2 rounded-lg text-sm font-medium bg-slate-900 dark:bg-white text-white dark:text-slate-900">All Sources</button>
+                    <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">ML Fairness</button>
+                    <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">Philosophy</button>
+                    <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">Policy &amp; Law</button>
+                </div>
+
+                <button class="flex items-center gap-2 px-4 py-2.5 bg-teal-500 hover:bg-teal-400 text-white rounded-xl text-sm font-semibold transition-all shadow-lg shadow-teal-500/20">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Export All (.BIB)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 gap-6">
+
+            <div class="bib-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 hover:border-teal-500/30 transition-all duration-300 reveal active">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 uppercase tracking-wider">ML Fairness</span>
+                            <span class="text-xs text-slate-400 font-mono">DOI: 10.1145/3287560.3287596</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors cursor-pointer">
+                            A Survey on Bias and Fairness in Machine Learning
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed italic">
+                            Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., &amp; Galstyan, A. (2021). ACM Computing Surveys (CSUR).
+                        </p>
+                        <div class="bg-slate-50 dark:bg-slate-850/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                <strong class="text-slate-700 dark:text-slate-300">Abstract Preview:</strong> This survey provides a taxonomy of various fairness definitions and bias types, providing researchers with a structured way to understand the landscape of algorithmic bias.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bib-actions md:opacity-0 flex flex-row md:flex-col gap-2 transition-opacity">
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-teal-500 hover:text-white rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            BibTeX
+                        </button>
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bib-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 hover:border-teal-500/30 transition-all duration-300 reveal active">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/10 text-purple-600 dark:text-purple-400 uppercase tracking-wider">Philosophy</span>
+                            <span class="text-xs text-slate-400 font-mono">ISBN: 9780141981512</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors cursor-pointer">
+                            Weapons of Math Destruction
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed italic">
+                            O'Neil, C. (2016). Crown Publishing Group.
+                        </p>
+                        <div class="bg-slate-50 dark:bg-slate-850/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                <strong class="text-slate-700 dark:text-slate-300">Abstract Preview:</strong> Explores how Big Data and algorithms can reinforce discrimination and undermine democracy when they are opaque, unaccountable, and applied at scale.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bib-actions md:opacity-0 flex flex-row md:flex-col gap-2 transition-opacity">
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-teal-500 hover:text-white rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            BibTeX
+                        </button>
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bib-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 hover:border-teal-500/30 transition-all duration-300 reveal active">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-500 uppercase tracking-wider">Policy &amp; Law</span>
+                            <span class="text-xs text-slate-400 font-mono">ArXiv: 1606.06565</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors cursor-pointer">
+                            European Union Regulations on Algorithmic Decision-Making and a "Right to Explanation"
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed italic">
+                            Goodman, B., &amp; Flaxman, S. (2017). AI Magazine.
+                        </p>
+                        <div class="bg-slate-50 dark:bg-slate-850/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                <strong class="text-slate-700 dark:text-slate-300">Abstract Preview:</strong> Discusses the implications of the GDPR on automated individual decision-making and the legal challenges of providing human-interpretable explanations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bib-actions md:opacity-0 flex flex-row md:flex-col gap-2 transition-opacity">
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-teal-500 hover:text-white rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            BibTeX
+                        </button>
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden xl:block fixed right-12 top-64 w-80 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-6">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Quick Citation</h4>
+                <div class="bg-slate-50 dark:bg-slate-950 rounded-xl p-4 mb-4 border border-slate-200 dark:border-slate-800">
+                    <p class="text-xs font-mono text-slate-600 dark:text-slate-400 leading-relaxed">
+                        @article{mehrabi2021survey,<br>
+                        &nbsp;&nbsp;title={A survey on bias and fairness in machine learning},<br>
+                        &nbsp;&nbsp;author={Mehrabi, Ninareh and others},<br>
+                        &nbsp;&nbsp;journal={ACM Computing Surveys (CSUR)},<br>
+                        &nbsp;&nbsp;year={2021}<br>
+                        }
+                    </p>
+                </div>
+                <button class="w-full py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity">
+                    Copy BibTeX
+                </button>
+                <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+                    <span class="text-[10px] text-slate-500 uppercase font-bold">In-line Citation:</span>
+                    <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 font-medium">(Mehrabi et al., 2021)</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-12 flex items-center justify-center gap-2">
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-400 hover:border-teal-500 transition-colors">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-teal-500 text-white font-bold">1</button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:border-teal-500 transition-colors">2</button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:border-teal-500 transition-colors">3</button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-400 hover:border-teal-500 transition-colors">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-950 pt-16 pb-8 border-t border-slate-200 dark:border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+
+                <div class="col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">Ethos.</span>
+                    </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 pr-4">An academic exploration into the ethical dimensions of automated decision systems.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white mb-4">Project</h4>
+                    <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Home</a></li>
+                        <li><a href="index.html#about" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">About</a></li>
+                        <li><a href="index.html#project" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Overview</a></li>
+                        <li><a href="index.html#team" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Team</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white mb-4">Research</h4>
+                    <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html#methodology" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Methodology</a></li>
+                        <li><a href="index.html#analysis" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Analysis</a></li>
+                        <li><a href="index.html#recommendations" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Recommendations</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html#presentation" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Presentation Slides</a></li>
+                        <li><a href="bibliography.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Bibliography</a></li>
+                        <li><a href="dashboard.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Data Explorer</a></li>
+                        <li><a href="#" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors flex items-center gap-1">GitHub Repo <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 dark:text-slate-500">
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    <span class="font-semibold text-slate-600 dark:text-slate-300">CS490: Computer Ethics</span>
+                    <span class="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span>University Name Placeholder</span>
+                    <span class="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span>Fall 2024</span>
+                </div>
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    <span>v1.0.0</span>
+                    <span class="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span>Last updated: Oct 24, 2024</span>
+                    <span class="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span>&copy; 2024 Research Team</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            const htmlElement = document.documentElement;
+            const toggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+            if (htmlElement.classList.contains('dark')) {
+                lightIcon.classList.remove('hidden');
+            } else {
+                darkIcon.classList.remove('hidden');
+            }
+
+            toggleBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        htmlElement.classList.toggle('dark');
+                        if (htmlElement.classList.contains('dark')) {
+                            lightIcon.classList.remove('hidden');
+                            darkIcon.classList.add('hidden');
+                        } else {
+                            lightIcon.classList.add('hidden');
+                            darkIcon.classList.remove('hidden');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
