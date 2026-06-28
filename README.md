@@ -6,6 +6,12 @@ This repository is a documentation website for my ETHC303 group research project
 
 Live site: https://ethics.shoug-tech.com
 
+## Deployment
+
+The site is deployed automatically to GitHub Pages via a GitHub Actions workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) on every push to `main`. The custom domain is configured through [`CNAME`](CNAME).
+
+To enable it on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
 ## Why this exists
 
 I wanted a public, organized record of how the project came together rather than just submitting a paper and PPT and being done with it. The site currently includes:
