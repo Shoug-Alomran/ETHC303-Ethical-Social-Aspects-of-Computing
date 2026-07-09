@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task Split — ETHC303 Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-800: #1e293b;
+      --slate-850: #151e2e;
+      --slate-900: #0f172a;
+      --slate-950: #020617;
+      --white: #ffffff;
+
+      --teal-400: #2dd4bf;
+      --teal-500: #14b8a6;
+      --teal-600: #0d9488;
+      --amber-500: #f59e0b;
+      --amber-600: #d97706;
+      --orange-500: #f97316;
+      --emerald-500: #10b981;
+
+      --bg: var(--slate-50);
+      --surface: var(--white);
+      --surface-2: var(--slate-50);
+      --ink: var(--slate-900);
+      --ink-soft: var(--slate-500);
+      --ink-faint: var(--slate-400);
+      --line: var(--slate-200);
+      --ring: var(--slate-50);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: var(--slate-950);
+        --surface: var(--slate-900);
+        --surface-2: var(--slate-900);
+        --ink: #ffffff;
+        --ink-soft: #cbd5e1;
+        --ink-faint: var(--slate-400);
+        --line: var(--slate-800);
+        --ring: var(--slate-950);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+
+    .wrap {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 56px 24px 90px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink-faint);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color .2s, transform .2s;
+    }
+
+    .back:hover {
+      color: var(--teal-500);
+    }
+
+    .back svg {
+      width: 14px;
+      height: 14px;
+      transition: transform .2s;
+    }
+
+    .back:hover svg {
+      transform: translateX(-2px);
+    }
+
+    header.top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-bottom: 32px;
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      flex: none;
+      background: linear-gradient(135deg, rgba(20, 184, 166, .2), rgba(16, 185, 129, .2));
+      border: 1px solid rgba(20, 184, 166, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal-500);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal-500);
+      margin: 0 0 6px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    h2.section-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal-500);
+      margin: 0 0 8px;
+    }
+
+    h3.section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+
+    p.lede {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      max-width: 62ch;
+      margin: 0 0 28px;
+    }
+
+    .meta-right {
+      text-align: right;
+      font-size: 12.5px;
+      color: var(--ink-faint);
+      flex: none;
+    }
+
+    .meta-right div+div {
+      margin-top: 3px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* person cards */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    @media (max-width: 640px) {
+
+      .split-grid,
+      .present-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    .card.person {
+      border-top: 3px solid var(--accent);
+    }
+
+    .card.person.shoug {
+      --accent: var(--amber-500);
+    }
+
+    .card.person.layan {
+      --accent: var(--teal-500);
+    }
+
+    .person-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .person-id {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
+      flex: none;
+    }
+
+    .avatar.shoug {
+      background: linear-gradient(135deg, #fbbf24, var(--orange-500));
+    }
+
+    .avatar.layan {
+      background: linear-gradient(135deg, var(--teal-400), var(--emerald-500));
+    }
+
+    .person-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .person-share {
+      font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .person-role {
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin: 4px 0 18px 46px;
+    }
+
+    .task-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .task-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .task-list li:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .task-list li .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex: none;
+      margin-top: 6px;
+    }
+
+    .task-list li .label {
+      flex: 1;
+      color: var(--ink-soft);
+    }
+
+    .task-list li .label strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .task-list li .label em {
+      color: var(--ink-faint);
+      font-style: normal;
+    }
+
+    .task-list li .pages {
+      font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+
+    /* bars */
+    .bars-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 26px 28px 22px;
+    }
+
+    .bar-row {
+      margin-bottom: 16px;
+    }
+
+    .bar-row:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12.5px;
+      margin-bottom: 6px;
+    }
+
+    .bar-label .name {
+      color: var(--ink-soft);
+    }
+
+    .bar-label .val {
+      font-family: "SF Mono", ui-monospace, monospace;
+      color: var(--ink-faint);
+    }
+
+    .bar-track {
+      height: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 6px 0 0 6px;
+    }
+
+    .bar-fill.shoug {
+      background: var(--amber-500);
+    }
+
+    .bar-fill.layan {
+      background: var(--teal-500);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 12.5px;
+      color: var(--ink-soft);
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .legend i {
+      width: 9px;
+      height: 9px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .legend .total {
+      margin-left: auto;
+      font-family: "SF Mono", ui-monospace, monospace;
+      color: var(--ink-faint);
+    }
+
+    /* presentation */
+    .present-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .present-card {
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      padding: 20px 22px;
+    }
+
+    .present-card.shoug {
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .present-card.layan {
+      background: rgba(20, 184, 166, 0.06);
+    }
+
+    .present-card h4 {
+      font-size: 15.5px;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    .present-card.shoug h4 {
+      color: var(--amber-600);
+    }
+
+    .present-card.layan h4 {
+      color: var(--teal-600);
+    }
+
+    .present-card ol {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+    }
+
+    .present-card ol li {
+      padding: 3px 0;
+    }
+
+    /* workflow */
+    .flow {
+      position: relative;
+      margin-left: 15px;
+      border-left: 2px solid var(--line);
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 0 0 30px 28px;
+    }
+
+    .flow-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .flow-node {
+      position: absolute;
+      left: -15px;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: "SF Mono", ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 0 0 4px var(--ring);
+    }
+
+    .flow-step.shoug .flow-node {
+      background: var(--amber-500);
+    }
+
+    .flow-step.layan .flow-node {
+      background: var(--teal-500);
+    }
+
+    .flow-who {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin: 0 0 2px;
+    }
+
+    .flow-step.shoug .flow-who {
+      color: var(--amber-600);
+    }
+
+    .flow-step.layan .flow-who {
+      color: var(--teal-600);
+    }
+
+    .flow-action {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 3px;
+    }
+
+    .flow-note {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* rationale */
+    .rationale {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--teal-500);
+      border-radius: 12px;
+      padding: 20px 24px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .rationale strong {
+      color: var(--ink);
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--teal-500);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      ethics.shoug-tech.com
+    </a>
+
+    <header class="top">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z">
+            </path>
+          </svg>
+        </div>
+        <div>
+          <p class="eyebrow">ETHC303 Project · Working Doc</p>
+          <h1>Group Paper — Task Split</h1>
+        </div>
+      </div>
+      <div class="meta-right">
+        <div>10-page paper · shared presentation</div>
+        <div>Target split ≈ 65–70 / 30–35</div>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-eyebrow">Division of Labor</h2>
+      <h3 class="section-title">Who writes what</h3>
+      <p class="lede">Weighted by where the rubric puts its marks, not by section count — Shoug takes the sections that
+        carry the most content weight; Layan's sections are shorter but no less necessary.</p>
+
+      <div class="split-grid">
+        <div class="card person shoug">
+          <div class="person-head">
+            <div class="person-id">
+              <div class="avatar shoug">SA</div><span class="person-name">Shoug</span>
+            </div>
+          </div>
+          <div class="person-role">heaviest content sections + final assembly</div>
+          <ul class="task-list">
+            <li><span class="dot"></span><span class="label">Introduction</span><span class="pages">1 pg</span></li>
+            <li><span class="dot"></span><span class="label"><strong>Literature Review</strong></span><span
+                class="pages">2.5 pg</span></li>
+            <li><span class="dot"></span><span class="label"><strong>Analysis</strong> <em>— largest
+                  section</em></span><span class="pages">2.5 pg</span></li>
+            <li><span class="dot"></span><span class="label">Recommendations</span><span class="pages">1 pg</span></li>
+            <li><span class="dot"></span><span class="label">Final editing, integration, plagiarism check,
+                formatting</span><span class="pages">—</span></li>
+          </ul>
+        </div>
+
+        <div class="card person layan">
+          <div class="person-head">
+            <div class="person-id">
+              <div class="avatar layan">L</div><span class="person-name">Layan</span>
+            </div>
+          </div>
+          <div class="person-role">shorter sections + sourcing</div>
+          <ul class="task-list">
+            <li><span class="dot"></span><span class="label">Abstract <em>(written last)</em></span><span
+                class="pages">0.5 pg</span></li>
+            <li><span class="dot"></span><span class="label">Methodology</span><span class="pages">0.5–1 pg</span></li>
+            <li><span class="dot"></span><span class="label">Conclusion</span><span class="pages">0.5 pg</span></li>
+            <li><span class="dot"></span><span class="label">References &amp; APA formatting</span><span
+                class="pages">—</span></li>
+            <li><span class="dot"></span><span class="label">Sourcing scholarly references &amp; images for the
+                deck</span><span class="pages">—</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-eyebrow">Estimated Page Distribution</h2>
+      <h3 class="section-title">10-page budget</h3>
+      <p class="lede">References and formatting work aren't counted toward the page limit, so the bars below track only
+        the written sections.</p>
+
+      <div class="bars-card">
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Introduction — Shoug</span><span class="val">1.0 pg</span></div>
+          <div class="bar-track">
+            <div class="bar-fill shoug" style="width:40%"></div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Literature Review — Shoug</span><span class="val">2.5 pg</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill shoug" style="width:100%"></div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Analysis — Shoug</span><span class="val">2.5 pg</span></div>
+          <div class="bar-track">
+            <div class="bar-fill shoug" style="width:100%"></div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Recommendations — Shoug</span><span class="val">1.0 pg</span></div>
+          <div class="bar-track">
+            <div class="bar-fill shoug" style="width:40%"></div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Abstract — Layan</span><span class="val">0.5 pg</span></div>
+          <div class="bar-track">
+            <div class="bar-fill layan" style="width:20%"></div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Methodology — Layan</span><span class="val">0.5–1 pg</span></div>
+          <div class="bar-track">
+            <div class="bar-fill layan" style="width:30%"></div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Conclusion — Layan</span><span class="val">0.5 pg</span></div>
+          <div class="bar-track">
+            <div class="bar-fill layan" style="width:20%"></div>
+          </div>
+        </div>
+
+        <div class="legend">
+          <span><i style="background:var(--amber-500)"></i>Shoug ≈ 7 pg</span>
+          <span><i style="background:var(--teal-500)"></i>Layan ≈ 2–3 pg + refs</span>
+          <span class="total">10 pg total</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-eyebrow">Shared Delivery</h2>
+      <h3 class="section-title">Presentation split</h3>
+      <p class="lede">Each person presents the parts they wrote — nobody explains someone else's section from a slide
+        they didn't build.</p>
+
+      <div class="present-grid">
+        <div class="present-card shoug">
+          <h4>Shoug explains</h4>
+          <ol>
+            <li>Introduction</li>
+            <li>Literature Review</li>
+            <li>Ethical Analysis</li>
+            <li>Recommendations</li>
+          </ol>
+        </div>
+        <div class="present-card layan">
+          <h4>Layan explains</h4>
+          <ol>
+            <li>AI overview</li>
+            <li>Methodology</li>
+            <li>Key findings</li>
+            <li>Conclusion</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-eyebrow">Sequence — order matters here</h2>
+      <h3 class="section-title">How the paper actually gets built</h3>
+      <p class="lede">Each step depends on the one before it, so the order below is load-bearing, not just a checklist.
+      </p>
+
+      <div class="flow">
+        <div class="flow-step shoug">
+          <div class="flow-node">1</div>
+          <p class="flow-who">Shoug</p>
+          <p class="flow-action">Write the Introduction</p>
+          <p class="flow-note">Sets the paper's direction before anything else starts.</p>
+        </div>
+        <div class="flow-step layan">
+          <div class="flow-node">2</div>
+          <p class="flow-who">Layan</p>
+          <p class="flow-action">Collect 10–15 scholarly sources</p>
+          <p class="flow-note">IEEE, ACM, Springer, ScienceDirect, Google Scholar.</p>
+        </div>
+        <div class="flow-step shoug">
+          <div class="flow-node">3</div>
+          <p class="flow-who">Shoug</p>
+          <p class="flow-action">Write Literature Review + Analysis</p>
+          <p class="flow-note">Built directly on the sources Layan gathered in step 2.</p>
+        </div>
+        <div class="flow-step layan">
+          <div class="flow-node">4</div>
+          <p class="flow-who">Layan</p>
+          <p class="flow-action">Write Methodology</p>
+          <p class="flow-note">Frames the paper as a literature-based review using secondary sources.</p>
+        </div>
+        <div class="flow-step shoug">
+          <div class="flow-node">5</div>
+          <p class="flow-who">Shoug</p>
+          <p class="flow-action">Write Recommendations</p>
+          <p class="flow-note">Follows from the Analysis findings.</p>
+        </div>
+        <div class="flow-step layan">
+          <div class="flow-node">6</div>
+          <p class="flow-who">Layan</p>
+          <p class="flow-action">Write Conclusion</p>
+        </div>
+        <div class="flow-step layan">
+          <div class="flow-node">7</div>
+          <p class="flow-who">Layan</p>
+          <p class="flow-action">Write Abstract</p>
+          <p class="flow-note">Written last, once the full paper exists to summarize.</p>
+        </div>
+        <div class="flow-step shoug">
+          <div class="flow-node">8</div>
+          <p class="flow-who">Shoug</p>
+          <p class="flow-action">Final merge, edit &amp; consistency pass</p>
+          <p class="flow-note">Reads the whole draft as one voice; plagiarism check; formatting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:0;">
+      <h2 class="section-eyebrow">Why this split</h2>
+      <div class="rationale">
+        <strong>Content-weighted, not section-count-weighted.</strong> Introduction, Literature Review, Analysis, and
+        Recommendations carry most of the rubric's content marks and the paper's largest section (Analysis), so Shoug's
+        share reflects that — not just a bigger slice for its own sake. Layan's sections (Abstract, Methodology,
+        Conclusion, References) are shorter and more contained, which offsets a heavier workload elsewhere this term.
+      </div>
+    </section>
+
+    <footer>
+      <span>ETHC303 group paper — task allocation</span>
+      <a href="index.html">← back to ethics.shoug-tech.com</a>
+    </footer>
+
+  </div>
+</body>
+
+</html>
