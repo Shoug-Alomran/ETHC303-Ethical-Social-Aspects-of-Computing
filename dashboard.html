@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="ethics-favicon.png">
     <title>Data Explorer | ETHC. ETHC303 Project</title>
-    <meta name="description" content="Filter datasets and fairness thresholds to explore how our models perform across demographic groups.">
+    <meta name="description" content="Filter datasets and fairness thresholds to explore how AI and expert systems perform across demographic groups in healthcare, finance, and criminal justice.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ethics.shoug-tech.com/dashboard.html">
     <meta property="og:title" content="Data Explorer | ETHC303 Project">
-    <meta property="og:description" content="Filter datasets and fairness thresholds to explore how our models perform across demographic groups.">
+    <meta property="og:description" content="Filter datasets and fairness thresholds to explore how AI and expert systems perform across demographic groups in healthcare, finance, and criminal justice.">
     <meta property="og:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Data Explorer | ETHC303 Project">
-    <meta name="twitter:description" content="Filter datasets and fairness thresholds to explore how our models perform across demographic groups.">
+    <meta name="twitter:description" content="Filter datasets and fairness thresholds to explore how AI and expert systems perform across demographic groups in healthcare, finance, and criminal justice.">
     <meta name="twitter:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -136,7 +136,7 @@
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Interactive Fairness Dashboard</h1>
                 <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-                    Filter datasets and fairness thresholds to explore how our models perform across demographic groups.
+                    Filter datasets and fairness thresholds to explore how AI and expert systems perform across demographic groups in healthcare, finance, and criminal justice.
                 </p>
             </div>
         </div>
@@ -151,15 +151,31 @@
                     <div class="space-y-2">
                         <label class="flex items-center gap-3 p-3 rounded-xl bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/30 cursor-pointer">
                             <input type="checkbox" checked class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
-                            <span class="text-sm font-medium text-slate-900 dark:text-white">COMPAS Recidivism</span>
+                            <div>
+                                <span class="text-sm font-medium text-slate-900 dark:text-white block">COMPAS Recidivism</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wide">Criminal Justice</span>
+                            </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors cursor-pointer">
                             <input type="checkbox" checked class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
-                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Adult Census (Income)</span>
+                            <div>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300 block">Clinical Risk-Prediction</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wide">Healthcare</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors cursor-pointer">
+                            <input type="checkbox" checked class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
+                            <div>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300 block">Adult Census (Income)</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wide">Finance</span>
+                            </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors cursor-pointer">
                             <input type="checkbox" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
-                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">German Credit Risk</span>
+                            <div>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300 block">German Credit Risk</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wide">Finance</span>
+                            </div>
                         </label>
                     </div>
                 </div>
@@ -233,7 +249,8 @@
                     <div class="reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 300ms">
                         <div class="flex justify-between items-start mb-8">
                             <div>
-                                <h4 class="text-lg font-bold">Recidivism Predictions by Race</h4>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/10 text-teal-600 dark:text-teal-400 uppercase tracking-wider">Criminal Justice</span>
+                                <h4 class="text-lg font-bold mt-2">Recidivism Predictions by Race</h4>
                                 <p class="text-xs text-slate-500">False Positive Rate Comparison (FPR)</p>
                             </div>
                             <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg>
@@ -297,7 +314,10 @@
 
                 <div class="reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden" style="transition-delay: 500ms">
                     <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
-                        <h4 class="font-bold text-sm">Empirical Dataset Sample</h4>
+                        <div>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/10 text-teal-600 dark:text-teal-400 uppercase tracking-wider">Criminal Justice</span>
+                            <h4 class="font-bold text-sm mt-1">Empirical Dataset Sample</h4>
+                        </div>
                         <div class="flex gap-2">
                             <input type="text" placeholder="Search rows..." class="text-xs bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-1.5 outline-none focus:border-teal-500">
                         </div>
@@ -370,7 +390,7 @@
                         </svg>
                         <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">ETHC.</span>
                     </div>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 pr-4">An academic exploration into the ethical dimensions of automated decision systems.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 pr-4">An academic exploration into the social implications of AI and expert systems in healthcare, finance, and beyond.</p>
                 </div>
 
                 <div>

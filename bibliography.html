@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="ethics-favicon.png">
     <title>Bibliography | ETHC. ETHC303 Project</title>
-    <meta name="description" content="A curated collection of foundational texts and contemporary research papers that informed our analysis of algorithmic systems, fairness metrics, and the philosophy of technology.">
+    <meta name="description" content="A curated collection of foundational texts and contemporary research papers that informed our analysis of AI and expert systems in healthcare, finance, and criminal justice.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ethics.shoug-tech.com/bibliography.html">
     <meta property="og:title" content="Bibliography | ETHC303 Project">
-    <meta property="og:description" content="A curated collection of foundational texts and contemporary research papers that informed our analysis of algorithmic systems, fairness metrics, and the philosophy of technology.">
+    <meta property="og:description" content="A curated collection of foundational texts and contemporary research papers that informed our analysis of AI and expert systems in healthcare, finance, and criminal justice.">
     <meta property="og:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bibliography | ETHC303 Project">
-    <meta name="twitter:description" content="A curated collection of foundational texts and contemporary research papers that informed our analysis of algorithmic systems, fairness metrics, and the philosophy of technology.">
+    <meta name="twitter:description" content="A curated collection of foundational texts and contemporary research papers that informed our analysis of AI and expert systems in healthcare, finance, and criminal justice.">
     <meta name="twitter:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -141,7 +141,7 @@
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Academic Bibliography</h1>
                 <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-                    A curated collection of foundational texts and contemporary research papers that informed our analysis of algorithmic systems, fairness metrics, and the philosophy of technology.
+                    A curated collection of foundational texts and contemporary research papers that informed our analysis of AI and expert systems in healthcare, finance, and criminal justice.
                 </p>
             </div>
         </div>
@@ -161,6 +161,8 @@
                 <div class="flex items-center gap-2 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0">
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Filter:</span>
                     <button class="px-4 py-2 rounded-lg text-sm font-medium bg-slate-900 dark:bg-white text-white dark:text-slate-900">All Sources</button>
+                    <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">Healthcare AI</button>
+                    <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">Finance AI</button>
                     <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">ML Fairness</button>
                     <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">Philosophy</button>
                     <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-colors whitespace-nowrap">Policy &amp; Law</button>
@@ -177,6 +179,70 @@
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 items-start">
         <div class="xl:col-span-2 space-y-6">
+
+            <div class="bib-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 hover:border-teal-500/30 transition-all duration-300 reveal active">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Healthcare AI</span>
+                            <span class="text-xs text-slate-400 font-mono">DOI: 10.1126/science.aax2342</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors cursor-pointer">
+                            Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed italic">
+                            Obermeyer, Z., Powers, B., Vogeli, C., &amp; Mullainathan, S. (2019). Science, 366(6464).
+                        </p>
+                        <div class="bg-slate-50 dark:bg-slate-850/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                <strong class="text-slate-700 dark:text-slate-300">Abstract Preview:</strong> Shows that a widely used clinical risk-prediction algorithm exhibits significant racial bias because it uses healthcare cost as a proxy for healthcare need, systematically under-referring Black patients for extra care.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bib-actions md:opacity-0 flex flex-row md:flex-col gap-2 transition-opacity">
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-teal-500 hover:text-white rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            BibTeX
+                        </button>
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bib-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 hover:border-teal-500/30 transition-all duration-300 reveal active">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-500 uppercase tracking-wider">Finance AI</span>
+                            <span class="text-xs text-slate-400 font-mono">Yale J.L. &amp; Tech. 18(1)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors cursor-pointer">
+                            Credit Scoring in the Era of Big Data
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed italic">
+                            Hurley, M., &amp; Adebayo, J. (2016). Yale Journal of Law and Technology, 18(1).
+                        </p>
+                        <div class="bg-slate-50 dark:bg-slate-850/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                <strong class="text-slate-700 dark:text-slate-300">Abstract Preview:</strong> Examines how big-data credit-scoring expert systems use non-traditional variables (zip code, spending category, social ties) that can act as proxies for race and income, and evaluates the adequacy of existing fair-lending law.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bib-actions md:opacity-0 flex flex-row md:flex-col gap-2 transition-opacity">
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-teal-500 hover:text-white rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            BibTeX
+                        </button>
+                        <button class="flex items-center justify-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-xs font-medium transition-all">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Link
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <div class="bib-card group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 hover:border-teal-500/30 transition-all duration-300 reveal active">
                 <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
@@ -280,11 +346,13 @@
                 <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Quick Citation</h4>
                 <div class="bg-slate-50 dark:bg-slate-950 rounded-xl p-4 mb-4 border border-slate-200 dark:border-slate-800">
                     <p class="text-xs font-mono text-slate-600 dark:text-slate-400 leading-relaxed">
-                        @article{mehrabi2021survey,<br>
-                        &nbsp;&nbsp;title={A survey on bias and fairness in machine learning},<br>
-                        &nbsp;&nbsp;author={Mehrabi, Ninareh and others},<br>
-                        &nbsp;&nbsp;journal={ACM Computing Surveys (CSUR)},<br>
-                        &nbsp;&nbsp;year={2021}<br>
+                        @article{obermeyer2019dissecting,<br>
+                        &nbsp;&nbsp;title={Dissecting racial bias in an algorithm used to manage the health of populations},<br>
+                        &nbsp;&nbsp;author={Obermeyer, Ziad and Powers, Brian and Vogeli, Christine and Mullainathan, Sendhil},<br>
+                        &nbsp;&nbsp;journal={Science},<br>
+                        &nbsp;&nbsp;volume={366},<br>
+                        &nbsp;&nbsp;number={6464},<br>
+                        &nbsp;&nbsp;year={2019}<br>
                         }
                     </p>
                 </div>
@@ -293,7 +361,7 @@
                 </button>
                 <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
                     <span class="text-[10px] text-slate-500 uppercase font-bold">In-line Citation:</span>
-                    <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 font-medium">(Mehrabi et al., 2021)</p>
+                    <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 font-medium">(Obermeyer et al., 2019)</p>
                 </div>
             </div>
 
@@ -323,7 +391,7 @@
                         </svg>
                         <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">ETHC.</span>
                     </div>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 pr-4">An academic exploration into the ethical dimensions of automated decision systems.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 pr-4">An academic exploration into the social implications of AI and expert systems in healthcare, finance, and beyond.</p>
                 </div>
 
                 <div>
