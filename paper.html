@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ethics-favicon.png">
+    <title>Full Paper Draft | ETHC. ETHC303 Project</title>
+    <meta name="description" content="The full working draft of our ETHC303 research paper on the social implications of AI and Expert Systems, section by section.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ethics.shoug-tech.com/paper.html">
+    <meta property="og:title" content="Full Paper Draft | ETHC303 Project">
+    <meta property="og:description" content="The full working draft of our ETHC303 research paper on the social implications of AI and Expert Systems, section by section.">
+    <meta property="og:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Full Paper Draft | ETHC303 Project">
+    <meta name="twitter:description" content="The full working draft of our ETHC303 research paper on the social implications of AI and Expert Systems, section by section.">
+    <meta name="twitter:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        teal: {
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                        },
+                        emerald: {
+                            500: '#10b981',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .paper-prose p { margin-bottom: 1.1em; line-height: 1.75; }
+        .paper-prose h4 { margin-top: 1.6em; margin-bottom: 0.6em; }
+        .toc-link.active {
+            color: #0d9488;
+            font-weight: 600;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans antialiased transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center border border-teal-500/30 group-hover:border-teal-500/60 transition-all">
+                        <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight block leading-none">ETHC<span class="text-teal-600 dark:text-teal-400">.</span></span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">ETHC303 Project</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Home</a>
+                    <a href="index.html#about" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">About</a>
+                    <a href="index.html#project" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Project</a>
+                    <a href="paper.html" class="px-3 py-2 rounded-md text-sm font-medium text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10">Paper</a>
+                    <a href="dashboard.html" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Analysis</a>
+
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                            More
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute right-0 w-48 mt-2 origin-top-right bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform scale-95 group-hover:scale-100 p-2 z-50">
+                            <a href="index.html#recommendations" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Recommendations</a>
+                            <a href="index.html#team" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Team</a>
+                            <a href="bibliography.html" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Bibliography</a>
+                            <a href="dashboard.html" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Data Explorer</a>
+                        </div>
+                    </div>
+
+                    <div class="w-px h-6 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                    <button id="theme-toggle" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-16 pb-12 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl reveal active">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 mb-6">
+                    <span class="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest">Manuscript · Working Draft</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Social Implications of AI &amp; Expert Systems</h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+                    The full working draft of our ETHC303 research paper, laid out section by section per the course template. Sections still being written are marked <span class="font-semibold text-amber-600 dark:text-amber-500">Pending</span>; everything else is the current draft text.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col lg:flex-row gap-10">
+
+            <aside class="lg:w-64 flex-shrink-0 lg:sticky lg:top-28 lg:self-start reveal active">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">On this page</h3>
+                <nav class="space-y-1 text-sm">
+                    <a href="#abstract" class="toc-link flex items-center justify-between py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Abstract <span class="text-[10px] font-bold text-amber-500">PENDING</span></a>
+                    <a href="#introduction" class="toc-link block py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Introduction</a>
+                    <a href="#literature-review" class="toc-link block py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Literature Review</a>
+                    <a href="#methodology" class="toc-link flex items-center justify-between py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Methodology <span class="text-[10px] font-bold text-amber-500">PENDING</span></a>
+                    <a href="#analysis" class="toc-link block py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Analysis</a>
+                    <a href="#recommendations" class="toc-link block py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Recommendations</a>
+                    <a href="#conclusion" class="toc-link flex items-center justify-between py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Conclusion <span class="text-[10px] font-bold text-amber-500">PENDING</span></a>
+                    <a href="#references" class="toc-link block py-1.5 text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">References</a>
+                </nav>
+                <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 space-y-2">
+                    <a href="research-paper.pdf" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity">
+                        Open PDF Document
+                    </a>
+                    <a href="bibliography.html" class="flex items-center justify-center gap-2 w-full py-2.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        View Bibliography
+                    </a>
+                </div>
+            </aside>
+
+            <article class="flex-grow min-w-0 max-w-3xl space-y-16">
+
+                <section id="abstract" class="reveal active scroll-mt-28">
+                    <div class="flex items-center gap-3 mb-4">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Abstract</h2>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-500 uppercase tracking-wider">Pending — Layan</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-850/50 border border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-6">
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Not yet written. Once the paper is complete, this section will be a 150–250 word summary covering:</p>
+                        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
+                            <li>Purpose of the paper</li>
+                            <li>Research methods</li>
+                            <li>Main findings</li>
+                            <li>Ethical, social, and sustainability implications</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="introduction" class="reveal active scroll-mt-28">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Introduction</h2>
+                    <div class="paper-prose text-slate-700 dark:text-slate-300 text-[15px]">
+                        <p>Artificial Intelligence (AI) and Expert Systems have become an indispensable part of today's society; they help change industries including healthcare, education, finances, transport, manufacturing, and cybersecurity through the ability of machines to do work that needs human intelligence. As the development of AI and its autonomy progress, the impact that these technologies have on individuals, businesses, and even governments becomes greater.</p>
+                        <p>Artificial Intelligence is defined as the field of computer science dealing with the creation of technologies and algorithms that help computers learn, reason, solve problems, comprehend language and make decisions. Expert Systems are a particular type of AI technologies aimed at imitating human expert behavior in particular domains through applying knowledge and making inferences. These technologies can be used for making decisions and providing recommendations related to medicine, finance, or technical support.</p>
+                        <p>Fast uptake of AI and expert systems in today's technology-driven world makes this topic ever more relevant. Although the adoption of these technologies is associated with such benefits as increased productivity, better healthcare services, and efficient business management, these technologies pose numerous threats regarding privacy concerns, algorithmic discrimination, accountability issues, unemployment, cybersecurity risks, and the appropriate use of personal information. The wide use of AI and expert systems raises some crucial questions about how our society should combine technological advancements with the protection of individual rights and overall public interests.</p>
+                        <p>In terms of ethics, AI should be utilized wisely to guarantee justice, transparency, accountability, and respect towards people. Societally, AI can affect employment relations, education systems, communication processes, and other areas and make changes in these spheres both positive and negative. Moreover, the sustainability of AI technologies implies some concerns regarding their environmental impact and excessive energy consumption by computing facilities.</p>
+                        <p>In this study, the main aim is to examine the social dimension of Artificial Intelligence and Expert Systems through the evaluation of ethical, social, and sustainable impacts of these technologies. The study involves an analysis of literature review, benefits and challenges of the above-mentioned technologies, as well as generation of solutions for ethical development of these technologies. Here are the research questions:</p>
+                        <ul class="list-disc list-inside space-y-1 mb-4">
+                            <li>What are the major social implications of Artificial Intelligence and Expert Systems?</li>
+                            <li>What ethical challenges arise from their widespread adoption?</li>
+                            <li>How can these technologies be developed and implemented in a socially responsible and sustainable manner?</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="literature-review" class="reveal active scroll-mt-28">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Literature Review</h2>
+                    <div class="paper-prose text-slate-700 dark:text-slate-300 text-[15px]">
+                        <p>Artificial Intelligence (AI) and Expert Systems have received considerable attention from researchers in relation to their significant impact on our current world. Many studies have focused on ways through which these technologies enhance decision making processes, automate tasks, and help different industries including health care, finance, education, manufacturing, transport, and cyber security. According to research findings, AI technology is capable of increasing efficiency, cutting down costs and providing accurate decisions based on available data. On the other hand, expert systems have proved useful through the replication of human expertise in order to help professionals within specialized industries such as medicine, finance, and technical support.</p>
+                        <p>There are also many previous studies indicating different applications of AI technologies. In the health industry, AI is used in disease diagnosis, imaging and personalization of treatments. AI technologies are also applied by financial institutions in detecting frauds, evaluating the credit scoring of clients and analyzing investments. Moreover, educational institutions apply AI-based tutoring systems and personalized learning platforms.</p>
+                        <p>Although there are various advantages of using AI, researchers have found several ethical issues that arise from its usage. First of all, there is an issue related to algorithmic biases and discrimination based on the usage of data for training purposes. The problem of privacy is another significant issue as AI requires a vast amount of personal information to function correctly. Furthermore, there are issues of responsibility in terms of who should be responsible for any wrong decisions made by AI system.</p>
+                        <p>Moreover, researchers consider social consequences of adopting AI technologies and Expert Systems. While AI can help to innovate and drive economic development, these technologies can lead to job loss due to automation of the work process. There are many routine operations that are done now not by people but by intelligent systems that require certain skills of working with technologies. Moreover, there is an issue related to the gap between people who have access to such technologies and those who do not.</p>
+                        <p>Another area that AI research is focusing on is sustainability. Advanced AI models use huge amounts of computational power and energy for training and operation purposes; hence the issue of carbon emissions has emerged. At the same time, AI helps to promote sustainable development in terms of energy efficiency, enhancing transportation processes, environmental monitoring, cutting down waste, etc. Even though there were many aspects of AI studied by researchers in the past, there are still some research gaps in the sphere. The majority of studies focus on particular sectors or ethical issues without analyzing all ethical, social, and sustainability aspects of the technology at once. Moreover, the rapid development of generative AI and advanced Expert Systems brings certain problems like the spread of misinformation, IP rights, etc. This paper will address those issues by discussing the social implications of AI and Expert Systems in terms of ethical, social, and sustainability aspects.</p>
+                    </div>
+                </section>
+
+                <section id="methodology" class="reveal active scroll-mt-28">
+                    <div class="flex items-center gap-3 mb-4">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Methodology</h2>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-500 uppercase tracking-wider">Pending — Layan</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-850/50 border border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-6">
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Not yet written. This section will describe:</p>
+                        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
+                            <li>Research method used (Literature Review / Secondary Research)</li>
+                            <li>Databases and sources used</li>
+                            <li>Search approach</li>
+                            <li>Inclusion criteria</li>
+                            <li>Ethical frameworks used for analysis</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="analysis" class="reveal active scroll-mt-28">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Analysis</h2>
+                    <div class="paper-prose text-slate-700 dark:text-slate-300 text-[15px]">
+                        <p>Artificial Intelligence (AI) and expert systems have transformed numerous industries by improving efficiency, supporting decision-making, and automating complex tasks. These technologies are now widely used in healthcare, education, finance, transportation, manufacturing, and government services. Although AI offers significant benefits, it also introduces ethical, social, and sustainability challenges that require careful consideration. Existing research emphasizes that responsible AI development must balance technological innovation with fairness, accountability, transparency, and human well-being (Jobin et al., 2019; Morley et al., 2020).</p>
+
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Ethical Implications</h4>
+                        <p>One of the most significant ethical concerns surrounding AI is bias and discrimination. AI systems learn from historical data, meaning they may inherit and reinforce existing societal biases. If the training data contains racial, gender, or socioeconomic biases, AI systems can produce unfair outcomes in areas such as recruitment, credit scoring, healthcare, and criminal justice. Rather than eliminating human bias, AI may unintentionally automate it on a much larger scale (Hagerty &amp; Rubinov, 2019).</p>
+                        <p>Another major ethical issue is accountability. As AI systems become increasingly autonomous, determining responsibility for incorrect or harmful decisions becomes more difficult. Developers, organizations, and users all contribute to the deployment of AI, making it challenging to identify who should be held accountable when AI systems fail or produce harmful outcomes. Morley et al. (2020) argue that ethical principles alone are insufficient unless organizations implement practical governance mechanisms that ensure transparency, accountability, and continuous monitoring.</p>
+                        <p>Privacy is another major concern. AI systems rely heavily on collecting and analyzing large amounts of personal data. While this improves system performance, it also raises concerns about surveillance, informed consent, and data protection. Jobin et al. (2019) found that privacy is one of the most consistently recognized ethical principles across global AI ethics guidelines, highlighting the importance of protecting individuals' personal information while maintaining public trust.</p>
+
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Social Implications</h4>
+                        <p>AI has the potential to improve society by increasing productivity, enhancing healthcare services, supporting education, and improving public services. The Stanford AI Index Report (2024) shows that AI adoption continues to increase across both public and private sectors, demonstrating its growing importance in modern society. AI-powered diagnostic systems, virtual assistants, and intelligent transportation systems have already improved efficiency and accessibility in many industries.</p>
+                        <p>However, these benefits are not distributed equally. Hagerty and Rubinov (2019) argue that AI often amplifies existing social inequalities because access to AI technologies, digital infrastructure, and technical education varies significantly across countries and communities. Their global literature review suggests that low- and middle-income countries may experience greater risks while receiving fewer benefits from AI adoption. They also emphasize that AI systems should be understood as "technosocial systems," meaning that technology is deeply influenced by cultural, political, and economic contexts rather than functioning independently of society.</p>
+                        <p>Another important social concern is employment. AI and automation continue to replace repetitive and routine tasks across many industries. Although AI creates new opportunities in software engineering, cybersecurity, and data science, workers performing low-skilled or repetitive jobs may face displacement. The Stanford AI Index Report (2024) highlights the rapid expansion of generative AI technologies, increasing demand for AI-related skills while simultaneously changing workforce requirements. Organizations and governments therefore have a responsibility to invest in education and workforce reskilling to reduce unemployment caused by technological change.</p>
+
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Sustainability Implications</h4>
+                        <p>AI contributes to sustainable development by improving resource management, optimizing energy consumption, supporting precision agriculture, and assisting climate research. Intelligent systems can analyze massive datasets more efficiently than humans, allowing governments and organizations to make more informed environmental decisions.</p>
+                        <p>However, AI itself also consumes significant computational resources. Training modern machine learning models requires powerful computing infrastructure, increasing electricity consumption and carbon emissions. Sustainable AI therefore requires balancing technological advancement with environmentally responsible computing practices. Furthermore, sustainability is not limited to environmental concerns. According to Jobin et al. (2019), sustainable AI also requires promoting fairness, social inclusion, and long-term societal well-being rather than focusing solely on technical performance.</p>
+
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Benefits and Challenges</h4>
+                        <p>The benefits of AI and expert systems include faster decision-making, improved accuracy, reduced operational costs, enhanced productivity, and the ability to process enormous volumes of information quickly. In healthcare, AI assists physicians by identifying diseases earlier and improving diagnostic accuracy. In finance, AI detects fraudulent transactions more efficiently than traditional systems. Governments also increasingly use AI to improve public services and optimize resource allocation.</p>
+                        <p>Despite these advantages, AI presents several challenges. Algorithmic bias, privacy violations, cybersecurity threats, misinformation generated by AI systems, and reduced human oversight remain significant concerns. Hagerty and Rubinov (2019) emphasize that AI can reinforce social inequality when deployed without considering local cultural and socioeconomic conditions. Similarly, Morley et al. (2020) argue that ethical AI requires continuous evaluation throughout an AI system's lifecycle rather than relying only on high-level ethical guidelines.</p>
+
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Real-World Examples</h4>
+                        <p>Several real-world examples demonstrate both the opportunities and risks of AI. Hagerty and Rubinov (2019) describe India's use of AI to improve tuberculosis diagnosis through automated analysis of chest X-rays, illustrating AI's potential to improve healthcare outcomes. They also discuss Brazil's deployment of facial recognition technology for public security, raising concerns regarding surveillance, privacy, and potential discrimination. Additionally, China's social credit initiatives demonstrate how AI can be used to monitor and evaluate citizen behavior, illustrating the ethical tensions between public security and individual freedoms.</p>
+                        <p>These examples show that AI itself is neither inherently beneficial nor harmful. Instead, its impact depends on how it is designed, implemented, regulated, and governed within different social and cultural contexts.</p>
+
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Ethical Theories Applied</h4>
+                        <p>From a Utilitarian perspective, AI is considered ethical if it produces the greatest overall benefit for society. AI applications that improve healthcare, transportation, or disaster response can be morally justified because they maximize collective well-being. However, utilitarianism also requires minimizing harms such as discrimination and unemployment.</p>
+                        <p>Under Kantian ethics, AI developers have a duty to respect individuals as ends in themselves rather than treating them merely as sources of data or economic value. AI systems should therefore prioritize transparency, informed consent, privacy, and respect for human autonomy.</p>
+                        <p>Social Contract Theory suggests that society accepts AI only when governments and organizations establish clear laws, regulations, and accountability mechanisms that protect citizens' rights while promoting innovation. Public trust depends on responsible governance and transparent oversight.</p>
+                        <p>Finally, Virtue Ethics emphasizes the character of AI developers and organizations. Responsible AI requires honesty, fairness, integrity, accountability, and professional responsibility throughout the entire development and deployment process. Ethical organizations should actively prevent harm rather than merely complying with legal requirements.</p>
+                    </div>
+                </section>
+
+                <section id="recommendations" class="reveal active scroll-mt-28">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Recommendations</h2>
+                    <div class="paper-prose text-slate-700 dark:text-slate-300 text-[15px]">
+                        <p>For the proper utilization of Artificial Intelligence (AI) and Expert Systems, it is recommended that responsible practices should be used to get more out of these technologies and avoid the possible risks associated with them. Not only should the organizations include the ethical aspects of AI in the policies, but also they should take into account these aspects in all stages of AI implementation (Morley et al., 2020).</p>
+                        <p>One of the most significant recommendations is the implementation of the ethical governance of AI. This includes the creation of governance structures that will include the description of the responsibilities, ethical standards, and periodic evaluation of AI systems for their safety, fairness, and accountability. The independent audits and risk assessments should be carried out both before and after deploying the AI systems (Jobin et al., 2019).</p>
+                        <p>There should be increased transparency and accountability too. Organizations should offer comprehensible descriptions on how AI works and makes decisions in high-risk areas, including health care, finances, education, and law enforcement. There should be set measures of accountability so that accountability for any decisions made using the AI technologies remains with human organizations (Morley et al., 2020).</p>
+                        <p>Privacy and data protection should be considered too. The developers of AI technologies should apply privacy-by-design approach that requires collection of minimum data needed for certain purposes and protection of sensitive information. Individuals should be aware of how their personal information is being collected, processed, and used (Jobin et al., 2019).</p>
+                        <p>In order to minimize algorithmic biases, there should be used diverse datasets for training algorithms. There should be regular testing and evaluation of AI systems in order to detect any biases and eliminate them. Developers should continuously monitor AI systems to check their accuracy and fairness in view of any changes in data (Hagerty &amp; Rubinov, 2019).</p>
+                        <p>In any case, artificial intelligence should only act as a decision support system and not replace the work of a person in making critical decisions. The involvement of human intervention is vital for high-risk areas such as health care, criminal justice, finance, and national security. Any significant decision-making process must include the input of a professional human expert who could critically review the recommendations of the algorithm and take action when needed (Morley et al., 2020).</p>
+                        <p>Besides, businesses should also pursue sustainability in AI by enhancing efficiency in algorithms, avoiding wasting computational power, and utilizing energy-efficient computing systems wherever applicable. Apart from environmental sustainability, it would be reasonable to look at the impact on society that is associated with the implementation of AI technologies, such as reskilling of employees, digital inclusion, and access to the technologies (Stanford Institute for Human-Centered Artificial Intelligence, 2024).</p>
+                        <p>Lastly, it would be necessary to keep developing AI regulations that could ensure the development of innovations while preserving human rights. Collaborations between nations, governments, businesses, academia, and researchers will be crucial to set common moral norms in the sphere (Jobin et al., 2019).</p>
+                    </div>
+                </section>
+
+                <section id="conclusion" class="reveal active scroll-mt-28">
+                    <div class="flex items-center gap-3 mb-4">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Conclusion</h2>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-500 uppercase tracking-wider">Pending — Layan</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-850/50 border border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-6">
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Not yet written. This section will include:</p>
+                        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
+                            <li>Summary of key findings</li>
+                            <li>Importance of ethical AI</li>
+                            <li>Overall societal significance</li>
+                            <li>Final takeaway</li>
+                        </ul>
+                        <p class="text-xs text-slate-400 mt-3 italic">No new arguments will be introduced in this section.</p>
+                    </div>
+                </section>
+
+                <section id="references" class="reveal active scroll-mt-28">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">References</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Full entries with abstracts are on the <a href="bibliography.html" class="text-teal-600 dark:text-teal-400 font-medium hover:underline">Bibliography</a> page. APA 7 format below.</p>
+                    <div class="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+                        <p class="pl-8 -indent-8">Hagerty, A., &amp; Rubinov, I. (2019). Global AI ethics: A review of the social impacts and ethical implications of artificial intelligence. <em>Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society</em>, 274–280. <a href="https://arxiv.org/pdf/1907.07892" target="_blank" rel="noopener" class="text-teal-600 dark:text-teal-400 hover:underline">https://arxiv.org/pdf/1907.07892</a></p>
+                        <p class="pl-8 -indent-8">Jobin, A., Ienca, M., &amp; Vayena, E. (2019). The global landscape of AI ethics guidelines. <em>Nature Machine Intelligence, 1</em>(9), 389–399. <a href="https://arxiv.org/pdf/1906.11668" target="_blank" rel="noopener" class="text-teal-600 dark:text-teal-400 hover:underline">https://arxiv.org/pdf/1906.11668</a></p>
+                        <p class="pl-8 -indent-8">Morley, J., Machado, C. C. V., Burr, C., Cowls, J., Joshi, I., Taddeo, M., &amp; Floridi, L. (2020). From what to how: An overview of AI ethics tools, methods and research to translate principles into practices. <em>Science and Engineering Ethics, 26</em>(4), 2141–2168. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7417387/pdf/11948_2019_Article_165.pdf" target="_blank" rel="noopener" class="text-teal-600 dark:text-teal-400 hover:underline">https://pmc.ncbi.nlm.nih.gov/articles/PMC7417387</a></p>
+                        <p class="pl-8 -indent-8">Stanford Institute for Human-Centered Artificial Intelligence. (2024). <em>AI Index report 2024</em>. Stanford University. <a href="https://hai.stanford.edu/ai-index/2024-ai-index-report" target="_blank" rel="noopener" class="text-teal-600 dark:text-teal-400 hover:underline">https://hai.stanford.edu/ai-index/2024-ai-index-report</a></p>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-950 pt-16 pb-8 border-t border-slate-200 dark:border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+
+                <div class="col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">ETHC.</span>
+                    </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 pr-4">An academic exploration into the social implications of AI and expert systems in healthcare, finance, and beyond.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white mb-4">Project</h4>
+                    <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Home</a></li>
+                        <li><a href="index.html#about" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">About</a></li>
+                        <li><a href="index.html#project" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Overview</a></li>
+                        <li><a href="index.html#team" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Team</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white mb-4">Research</h4>
+                    <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="paper.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Full Paper</a></li>
+                        <li><a href="index.html#methodology" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Methodology</a></li>
+                        <li><a href="dashboard.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Analysis</a></li>
+                        <li><a href="index.html#recommendations" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Recommendations</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="bibliography.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Bibliography</a></li>
+                        <li><a href="dashboard.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Data Explorer</a></li>
+                        <li><a href="research-paper.pdf" target="_blank" rel="noopener" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Open PDF Document</a></li>
+                        <li><a href="#" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors flex items-center gap-1">GitHub Repo <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 dark:text-slate-500">
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    <span class="font-semibold text-slate-600 dark:text-slate-300">ETHC303: Computer Ethics</span>
+                    <span class="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span>Prince Sultan University</span>
+                    <span class="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span>2026</span>
+                </div>
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    <span>v1.0.0</span>
+                    <span class="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span>Last updated: July 10, 2026</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            const htmlElement = document.documentElement;
+            const toggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+            if (htmlElement.classList.contains('dark')) {
+                lightIcon.classList.remove('hidden');
+            } else {
+                darkIcon.classList.remove('hidden');
+            }
+
+            toggleBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        htmlElement.classList.toggle('dark');
+                        if (htmlElement.classList.contains('dark')) {
+                            lightIcon.classList.remove('hidden');
+                            darkIcon.classList.add('hidden');
+                        } else {
+                            lightIcon.classList.add('hidden');
+                            darkIcon.classList.remove('hidden');
+                        }
+                    });
+                }
+            });
+
+            const sections = document.querySelectorAll('article section[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            const tocObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const link = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+                    if (!link) return;
+                    if (entry.isIntersecting) {
+                        tocLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-30% 0px -60% 0px' });
+            sections.forEach(s => tocObserver.observe(s));
+        });
+    </script>
+
+</body>
+</html>
