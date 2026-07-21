@@ -74,7 +74,7 @@
                 <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
                     <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Home</a>
                     <a href="paper.html" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Paper</a>
-                    <a href="bibliography.html" class="px-3 py-2 rounded-md text-sm font-medium text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10">Bibliography</a>
+                    <a href="reference.html" class="px-3 py-2 rounded-md text-sm font-medium text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10">Reference</a>
 
                     <div class="w-px h-6 bg-slate-200 dark:bg-slate-700 mx-2"></div>
 
@@ -99,9 +99,9 @@
 
     <header class="pt-10 pb-6 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <a href="bibliography.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors mb-6">
+            <a href="reference.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors mb-6">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Back to Bibliography
+                Back to Reference
             </a>
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div class="min-w-0">
@@ -151,7 +151,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 dark:text-slate-500">
                 <span class="font-semibold text-slate-600 dark:text-slate-300">ETHC303: Computer Ethics · Prince Sultan University</span>
-                <a href="bibliography.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">← back to Bibliography</a>
+                <a href="reference.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">← back to Reference</a>
             </div>
         </div>
     </footer>
@@ -217,8 +217,8 @@
             document.getElementById('doc-official-inline').setAttribute('href', doc.official);
         } else {
             document.getElementById('doc-title').textContent = 'Source not found';
-            document.getElementById('doc-citation').textContent = 'No document was specified or it could not be located. Return to the Bibliography page and choose a source.';
-            document.getElementById('doc-official-inline').setAttribute('href', 'bibliography.html');
+            document.getElementById('doc-citation').textContent = 'No document was specified or it could not be located. Return to the Reference page and choose a source.';
+            document.getElementById('doc-official-inline').setAttribute('href', 'reference.html');
         }
 
         document.addEventListener('DOMContentLoaded', () => {

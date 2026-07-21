@@ -18,7 +18,7 @@ I wanted a public, organized record of how the project came together rather than
 
 - [`index.html`](index.html) — project landing page / showcase
 - [`dashboard.html`](dashboard.html) — progress tracking
-- [`bibliography.html`](bibliography.html) — sources and references collected during research
+- [`Reference.html`](Reference.html) — sources and references collected during research
 - [`team-jane-smith.html`](team-jane-smith.html), [`team-alex-doe.html`](team-alex-doe.html) — per-member pages (placeholder names — update with real teammates)
 
 ## About the assignment
