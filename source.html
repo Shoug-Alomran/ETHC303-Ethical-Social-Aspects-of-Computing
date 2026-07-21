@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ethics-favicon.png">
+    <title>Source Document | ETHC. ETHC303 Project</title>
+    <meta name="description" content="View or download a cited source document for the ETHC303 research paper.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ethics.shoug-tech.com/source.html">
+    <meta property="og:title" content="Source Document | ETHC303 Project">
+    <meta property="og:description" content="View or download a cited source document for the ETHC303 research paper.">
+    <meta property="og:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Source Document | ETHC303 Project">
+    <meta name="twitter:description" content="View or download a cited source document for the ETHC303 research paper.">
+    <meta name="twitter:image" content="https://ethics.shoug-tech.com/ethc303-banner.png">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        teal: {
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans antialiased transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center border border-teal-500/30 group-hover:border-teal-500/60 transition-all">
+                        <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight block leading-none">ETHC<span class="text-teal-600 dark:text-teal-400">.</span></span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">ETHC303 Project</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Home</a>
+                    <a href="paper.html" class="px-3 py-2 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Paper</a>
+                    <a href="bibliography.html" class="px-3 py-2 rounded-md text-sm font-medium text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10">Bibliography</a>
+
+                    <div class="w-px h-6 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                    <button id="theme-toggle" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-10 pb-6 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="bibliography.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors mb-6">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Bibliography
+            </a>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div class="min-w-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 mb-3">
+                        <span class="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest">Cited Source</span>
+                    </div>
+                    <h1 id="doc-title" class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Loading…</h1>
+                    <p id="doc-citation" class="text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-2xl"></p>
+                </div>
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <a id="btn-open" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-medium border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-300 text-sm">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        Open in Own Page
+                    </a>
+                    <a id="btn-download" href="#" download class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-teal-500 text-white font-semibold hover:bg-teal-400 hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300 text-sm">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-6">
+        <div class="flex items-start gap-3 bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-sm text-amber-800 dark:text-amber-300">
+            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M4.93 4.93a10 10 0 1114.14 14.14A10 10 0 014.93 4.93z"></path></svg>
+            <p><strong class="font-semibold">Not our work.</strong> This is the original publication of its author(s)/publisher, hosted here only so our paper's citations can be verified. We claim no authorship or ownership — full credit goes to the source below. See the <a href="#doc-official" id="doc-official-inline" class="underline hover:text-amber-600 dark:hover:text-amber-200">official publisher page</a> for the canonical version.</p>
+        </div>
+    </div>
+
+    <main class="flex-grow max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xl" style="height: calc(100vh - 380px); min-height: 500px;">
+            <object id="doc-object" data="" type="application/pdf" class="w-full h-full">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-4 p-8 text-center">
+                    <svg class="w-12 h-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <p class="text-slate-600 dark:text-slate-400">Your browser can't display this PDF inline.</p>
+                    <div class="flex items-center gap-3">
+                        <a id="btn-open-fallback" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:opacity-90 transition-opacity">Open in Own Page</a>
+                        <a id="btn-download-fallback" href="#" download class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500 text-white text-sm font-semibold hover:bg-teal-400 transition-colors">Download</a>
+                    </div>
+                </div>
+            </object>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-950 pt-10 pb-8 border-t border-slate-200 dark:border-slate-800 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 dark:text-slate-500">
+                <span class="font-semibold text-slate-600 dark:text-slate-300">ETHC303: Computer Ethics · Prince Sultan University</span>
+                <a href="bibliography.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">← back to Bibliography</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Each entry: filename in /research-papers, APA citation, and the official publisher URL.
+        // Full attribution and licensing notes: research-papers/CREDITS.md
+        const SOURCES = {
+            'jain-2023-racial-ethnic-bias-health-care-algorithms': {
+                title: 'Awareness of Racial and Ethnic Bias and Potential Solutions to Address Bias With Use of Health Care Algorithms',
+                citation: 'Jain, A., Brooks, J. R., Alford, C. C., Chang, C. S., Mueller, N. M., Umscheid, C. A., & Bierman, A. S. (2023). JAMA Health Forum, 4(6), e231197.',
+                official: 'https://doi.org/10.1001/jamahealthforum.2023.1197'
+            },
+            'stanford-hai-2024-ai-index-report': {
+                title: 'AI Index Report 2024',
+                citation: 'Stanford Institute for Human-Centered Artificial Intelligence. (2024). Stanford University.',
+                official: 'https://hai.stanford.edu/ai-index/2024-ai-index-report'
+            },
+            'nist-2023-ai-risk-management-framework': {
+                title: 'Artificial Intelligence Risk Management Framework (AI RMF 1.0)',
+                citation: 'Tabassi, E. (2023). NIST AI 100-1. National Institute of Standards and Technology.',
+                official: 'https://doi.org/10.6028/NIST.AI.100-1'
+            },
+            'unesco-2021-recommendation-ethics-of-ai': {
+                title: 'Recommendation on the Ethics of Artificial Intelligence',
+                citation: 'UNESCO. (2021). UNESCO.',
+                official: 'https://www.unesco.org/en/legal-affairs/recommendation-ethics-artificial-intelligence'
+            },
+            'wang-2024-ecological-footprints-carbon-emissions-ai': {
+                title: 'Ecological Footprints, Carbon Emissions, and Energy Transitions: The Impact of Artificial Intelligence (AI)',
+                citation: 'Wang, Q., Li, Y., & Li, R. (2024). Humanities and Social Sciences Communications, 11, 1043.',
+                official: 'https://doi.org/10.1057/s41599-024-03520-5'
+            },
+            'who-2021-ethics-governance-ai-health': {
+                title: 'Ethics and Governance of Artificial Intelligence for Health: WHO Guidance',
+                citation: 'World Health Organization. (2021). World Health Organization.',
+                official: 'https://www.who.int/publications/i/item/9789240029200'
+            },
+            'jobin-2019-global-landscape-ai-ethics-guidelines': {
+                title: 'The Global Landscape of AI Ethics Guidelines',
+                citation: 'Jobin, A., Ienca, M., & Vayena, E. (2019). Nature Machine Intelligence, 1(9), 389–399.',
+                official: 'https://doi.org/10.1038/s42256-019-0088-2'
+            },
+            'morley-2020-ai-ethics-tools-methods-practices': {
+                title: 'From What to How: An Overview of AI Ethics Tools, Methods and Research to Translate Principles into Practices',
+                citation: 'Morley, J., Machado, C. C. V., Burr, C., Cowls, J., Joshi, I., Taddeo, M., & Floridi, L. (2020). Science and Engineering Ethics, 26(4), 2141–2168.',
+                official: 'https://doi.org/10.1007/s11948-019-00165-5'
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const key = params.get('doc');
+        const doc = SOURCES[key];
+        const pdfPath = doc ? `research-papers/${key}.pdf` : null;
+
+        if (doc && pdfPath) {
+            document.title = doc.title + ' | ETHC. ETHC303 Project';
+            document.getElementById('doc-title').textContent = doc.title;
+            document.getElementById('doc-citation').textContent = doc.citation;
+            document.getElementById('doc-object').setAttribute('data', pdfPath);
+            ['btn-open', 'btn-open-fallback'].forEach(id => document.getElementById(id).setAttribute('href', pdfPath));
+            ['btn-download', 'btn-download-fallback'].forEach(id => document.getElementById(id).setAttribute('href', pdfPath));
+            document.getElementById('doc-official-inline').setAttribute('href', doc.official);
+        } else {
+            document.getElementById('doc-title').textContent = 'Source not found';
+            document.getElementById('doc-citation').textContent = 'No document was specified or it could not be located. Return to the Bibliography page and choose a source.';
+            document.getElementById('doc-official-inline').setAttribute('href', 'bibliography.html');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlElement = document.documentElement;
+            const toggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+            if (htmlElement.classList.contains('dark')) {
+                lightIcon.classList.remove('hidden');
+            } else {
+                darkIcon.classList.remove('hidden');
+            }
+
+            toggleBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        htmlElement.classList.toggle('dark');
+                        if (htmlElement.classList.contains('dark')) {
+                            lightIcon.classList.remove('hidden');
+                            darkIcon.classList.add('hidden');
+                        } else {
+                            lightIcon.classList.add('hidden');
+                            darkIcon.classList.remove('hidden');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
