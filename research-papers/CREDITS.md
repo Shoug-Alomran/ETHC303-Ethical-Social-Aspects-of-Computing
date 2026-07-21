@@ -24,4 +24,4 @@ taken down.
 | `morley-2020-ai-ethics-tools-methods-practices.pdf` | Morley, J., Machado, C. C. V., Burr, C., Cowls, J., Joshi, I., Taddeo, M., & Floridi, L. (2020). From what to how: An overview of AI ethics tools, methods and research to translate principles into practices. *Science and Engineering Ethics, 26*(4), 2141–2168. https://doi.org/10.1007/s11948-019-00165-5 |
 
 The last two (Jobin et al., 2019; Morley et al., 2020) are supplementary background reading
-gathered during research and are not directly cited in the current draft of the paper.
+gathered during research and are not directly cited in the final paper.

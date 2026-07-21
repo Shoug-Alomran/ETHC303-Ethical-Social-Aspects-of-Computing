@@ -70,10 +70,8 @@
             <div class="flex justify-between items-center h-20">
 
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center border border-teal-500/30 group-hover:border-teal-500/60 transition-all">
-                        <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+                    <div class="w-10 h-10 rounded-xl overflow-hidden border border-teal-500/30 group-hover:border-teal-500/60 transition-all shadow-sm">
+                        <img src="ethics-favicon.png" alt="ETHC project logo" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <span class="font-bold text-lg tracking-tight block leading-none">ETHC<span class="text-teal-600 dark:text-teal-400">.</span></span>
@@ -150,39 +148,46 @@
                 <div>
                     <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Dataset Selection</h3>
                     <div class="space-y-2">
-                        <label class="flex items-center gap-3 p-3 rounded-xl bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/30 cursor-pointer">
-                            <input type="checkbox" checked class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
+                        <label class="dataset-option flex items-center gap-3 p-3 rounded-xl bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/30 cursor-pointer transition-colors">
+                            <input type="checkbox" checked data-dataset="employment" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
                             <div>
                                 <span class="text-sm font-medium text-slate-900 dark:text-white block">Employment &amp; Inequality</span>
                                 <span class="text-[10px] text-slate-500 uppercase tracking-wide">Stanford HAI, UNESCO</span>
                             </div>
                         </label>
-                        <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors cursor-pointer">
-                            <input type="checkbox" checked class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
+                        <label class="dataset-option flex items-center gap-3 p-3 rounded-xl bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/30 cursor-pointer transition-colors">
+                            <input type="checkbox" checked data-dataset="sustainability" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
                             <div>
                                 <span class="text-sm font-medium text-slate-700 dark:text-slate-300 block">Energy &amp; Sustainability</span>
                                 <span class="text-[10px] text-slate-500 uppercase tracking-wide">Wang et al. 2024</span>
                             </div>
                         </label>
-                        <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 transition-colors cursor-pointer">
-                            <input type="checkbox" checked class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
+                        <label class="dataset-option flex items-center gap-3 p-3 rounded-xl bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/30 cursor-pointer transition-colors">
+                            <input type="checkbox" checked data-dataset="healthcare" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
                             <div>
                                 <span class="text-sm font-medium text-slate-700 dark:text-slate-300 block">Healthcare Algorithm Bias</span>
                                 <span class="text-[10px] text-slate-500 uppercase tracking-wide">Jain et al. 2023, WHO 2021</span>
                             </div>
                         </label>
+                        <label class="dataset-option flex items-center gap-3 p-3 rounded-xl bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/30 cursor-pointer transition-colors">
+                            <input type="checkbox" checked data-dataset="context" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 bg-transparent border-slate-300 dark:border-slate-700">
+                            <div>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300 block">Additional Research Context</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wide">Stanford HAI, Jobin et al.</span>
+                            </div>
+                        </label>
                     </div>
                 </div>
 
-                <button class="w-full py-3 px-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold text-sm shadow-lg hover:opacity-90 transition-opacity">
+                <button id="export-analysis" type="button" class="w-full py-3 px-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold text-sm shadow-lg hover:opacity-90 transition-opacity">
                     Export Analysis
                 </button>
             </aside>
 
             <section class="flex-grow space-y-8">
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl">
+                <div id="stat-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <div data-category="employment" class="finding-card reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl">
                         <div class="flex items-center gap-3 mb-2">
                             <div class="w-2 h-2 rounded-full bg-teal-500"></div>
                             <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Expect AI to Impact Jobs</span>
@@ -190,7 +195,15 @@
                         <div class="text-3xl font-bold">57%</div>
                         <div class="text-[10px] text-slate-400 mt-1">Within the next five years (Stanford HAI, 2024)</div>
                     </div>
-                    <div class="reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 100ms">
+                    <div data-category="employment" class="finding-card reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 100ms">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Fear AI Job Replacement</span>
+                        </div>
+                        <div class="text-3xl font-bold">36%</div>
+                        <div class="text-[10px] text-slate-400 mt-1">Within the next five years (Stanford HAI, 2024)</div>
+                    </div>
+                    <div data-category="sustainability" class="finding-card reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 150ms">
                         <div class="flex items-center gap-3 mb-2">
                             <div class="w-2 h-2 rounded-full bg-blue-500"></div>
                             <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">AI Training Energy Use</span>
@@ -198,7 +211,7 @@
                         <div class="text-3xl font-bold">1.287 GWh</div>
                         <div class="text-[10px] text-slate-400 mt-1">To train a model like ChatGPT (Wang et al., 2024)</div>
                     </div>
-                    <div class="reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 200ms">
+                    <div data-category="sustainability" class="finding-card reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 200ms">
                         <div class="flex items-center gap-3 mb-2">
                             <div class="w-2 h-2 rounded-full bg-purple-500"></div>
                             <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Carbon Change per 1% AI Growth</span>
@@ -206,6 +219,83 @@
                         <div class="text-3xl font-bold">-0.0013%</div>
                         <div class="text-[10px] text-slate-400 mt-1">National carbon emissions (Wang et al., 2024)</div>
                     </div>
+                    <div data-category="sustainability" class="finding-card reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 250ms">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Research Coverage</span>
+                        </div>
+                        <div class="text-3xl font-bold">67 countries</div>
+                        <div class="text-[10px] text-slate-400 mt-1">1,809 observations from 1993–2019 (Wang et al., 2024)</div>
+                    </div>
+                    <div data-category="healthcare" class="finding-card reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl" style="transition-delay: 300ms">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-rose-500"></div>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Algorithms Flagged</span>
+                        </div>
+                        <div class="text-3xl font-bold">18</div>
+                        <div class="text-[10px] text-slate-400 mt-1">Identified by 42 stakeholder respondents (Jain et al., 2023)</div>
+                    </div>
+                </div>
+
+                <div class="finding-card" data-category="context">
+                    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
+                        <div>
+                            <span class="px-2 py-1 rounded-md text-[10px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 uppercase tracking-wider">Additional research context</span>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3">Useful findings beyond the final paper</h3>
+                        </div>
+                        <p class="text-xs text-slate-500 max-w-sm">These figures come from research files used during the project but were not quoted in the submitted manuscript because of the paper's page-limit restrictions.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+                        <div class="rounded-2xl border border-violet-500/20 bg-violet-500/5 p-5">
+                            <div class="text-3xl font-bold text-violet-600 dark:text-violet-400">66%</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">expect AI to dramatically affect their lives within three to five years</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Stanford HAI, 2024</span>
+                        </div>
+                        <div class="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-5">
+                            <div class="text-3xl font-bold text-rose-600 dark:text-rose-400">52%</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">express nervousness about AI products and services</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Stanford HAI, 2024</span>
+                        </div>
+                        <div class="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5">
+                            <div class="text-3xl font-bold text-cyan-600 dark:text-cyan-400">55%</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">of organizations use AI in at least one business function</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Stanford HAI, 2024</span>
+                        </div>
+                        <div class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
+                            <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-400">42% / 59%</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">report AI-related cost reductions / revenue increases</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Stanford HAI, 2024</span>
+                        </div>
+                        <div class="rounded-2xl border border-blue-500/20 bg-blue-500/5 p-5">
+                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">25</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">U.S. AI-related regulations in 2023, compared with one in 2016</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Stanford HAI, 2024</span>
+                        </div>
+                        <div class="rounded-2xl border border-teal-500/20 bg-teal-500/5 p-5">
+                            <div class="text-3xl font-bold text-teal-600 dark:text-teal-400">139</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">AI-related medical devices approved by the FDA in 2022</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Stanford HAI, 2024</span>
+                        </div>
+                        <div class="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5">
+                            <div class="text-3xl font-bold text-amber-600 dark:text-amber-400">14 of 84</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">AI ethics guidelines referenced sustainability</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Jobin et al., 2019</span>
+                        </div>
+                        <div class="rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/5 p-5">
+                            <div class="text-2xl font-bold text-fuchsia-600 dark:text-fuchsia-400">$78M / $191M</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">estimated compute cost for GPT-4 / Gemini Ultra training</p>
+                            <span class="text-[10px] text-slate-400 mt-3 block">Stanford HAI, 2024 estimates</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mt-5 text-xs font-semibold">
+                        <a href="source.html?doc=stanford-hai-2024-ai-index-report" class="text-teal-600 dark:text-teal-400 hover:underline">View Stanford AI Index source</a>
+                        <a href="source.html?doc=jobin-2019-global-landscape-ai-ethics-guidelines" class="text-teal-600 dark:text-teal-400 hover:underline">View Jobin et al. source</a>
+                    </div>
+                </div>
+
+                <div id="no-results" class="hidden bg-white dark:bg-slate-900 border border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-10 text-center">
+                    <h3 class="font-bold text-slate-900 dark:text-white">No datasets selected</h3>
+                    <p class="text-sm text-slate-500 mt-2">Select at least one dataset to display its findings.</p>
                 </div>
 
                 <div class="reveal active bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden" style="transition-delay: 500ms">
@@ -215,7 +305,7 @@
                             <h4 class="font-bold text-sm mt-1">Empirical Findings Sample</h4>
                         </div>
                         <div class="flex gap-2">
-                            <input type="text" placeholder="Search rows..." class="text-xs bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-1.5 outline-none focus:border-teal-500">
+                            <input id="finding-search" type="search" placeholder="Search rows..." aria-label="Search findings" class="text-xs bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-1.5 outline-none focus:border-teal-500">
                         </div>
                     </div>
                     <div class="overflow-x-auto custom-scrollbar">
@@ -228,42 +318,96 @@
                                     <th class="px-6 py-4">Implication</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                            <tbody id="findings-table" class="divide-y divide-slate-100 dark:divide-slate-800">
+                                <tr data-category="employment" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
                                     <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td>
                                     <td class="px-6 py-4">Expect AI to affect their job within 5 years</td>
                                     <td class="px-6 py-4">57%</td>
                                     <td class="px-6 py-4 text-slate-500">Widespread anticipation of workforce change</td>
                                 </tr>
-                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                <tr data-category="employment" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
                                     <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td>
                                     <td class="px-6 py-4">Fear their job could be replaced by AI</td>
                                     <td class="px-6 py-4">36%</td>
                                     <td class="px-6 py-4 text-slate-500">Signals the need for reskilling investment</td>
                                 </tr>
-                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                <tr data-category="sustainability" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
                                     <td class="px-6 py-4 font-mono">Wang et al. (2024)</td>
                                     <td class="px-6 py-4">Energy to train a model like ChatGPT</td>
                                     <td class="px-6 py-4">1.287 GWh</td>
                                     <td class="px-6 py-4 text-slate-500">Roughly equal to 120 American households a year</td>
                                 </tr>
-                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                <tr data-category="sustainability" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
                                     <td class="px-6 py-4 font-mono">Wang et al. (2024)</td>
                                     <td class="px-6 py-4">Carbon emissions change per 1% AI growth</td>
                                     <td class="px-6 py-4">-0.0013%</td>
                                     <td class="px-6 py-4 text-slate-500">AI can support decarbonization when developed responsibly</td>
                                 </tr>
-                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                <tr data-category="sustainability" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
                                     <td class="px-6 py-4 font-mono">Wang et al. (2024)</td>
                                     <td class="px-6 py-4">Energy transition change per 1% AI growth</td>
                                     <td class="px-6 py-4">+0.0025%</td>
                                     <td class="px-6 py-4 text-slate-500">Largest coefficient observed among the effects studied</td>
                                 </tr>
-                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                <tr data-category="sustainability" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Wang et al. (2024)</td>
+                                    <td class="px-6 py-4">Ecological footprint change per 1% AI growth</td>
+                                    <td class="px-6 py-4">-0.0018%</td>
+                                    <td class="px-6 py-4 text-slate-500">Average result across 67 countries from 1993–2019</td>
+                                </tr>
+                                <tr data-category="sustainability" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Wang et al. (2024)</td>
+                                    <td class="px-6 py-4">Panel observations</td>
+                                    <td class="px-6 py-4">1,809</td>
+                                    <td class="px-6 py-4 text-slate-500">Longitudinal evidence covering 67 countries</td>
+                                </tr>
+                                <tr data-category="healthcare" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
                                     <td class="px-6 py-4 font-mono">Jain et al. (2023)</td>
                                     <td class="px-6 py-4">Healthcare algorithm bias against Black patients</td>
                                     <td class="px-6 py-4">Underestimated need</td>
                                     <td class="px-6 py-4 text-slate-500">Real world evidence of bias from proxy variables</td>
+                                </tr>
+                                <tr data-category="healthcare" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Jain et al. (2023)</td>
+                                    <td class="px-6 py-4">Stakeholder responses analyzed</td>
+                                    <td class="px-6 py-4">42</td>
+                                    <td class="px-6 py-4 text-slate-500">Representatives and individuals contributed 485 pages of evidence</td>
+                                </tr>
+                                <tr data-category="healthcare" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Jain et al. (2023)</td>
+                                    <td class="px-6 py-4">Algorithms with potential for bias</td>
+                                    <td class="px-6 py-4">18</td>
+                                    <td class="px-6 py-4 text-slate-500">Bias can arise whether or not race is explicitly included</td>
+                                </tr>
+                                <tr data-category="healthcare" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Jain et al. (2023)</td>
+                                    <td class="px-6 py-4">Qualitative findings</td>
+                                    <td class="px-6 py-4">7 themes / 31 subthemes</td>
+                                    <td class="px-6 py-4 text-slate-500">Shows bias can enter every stage of algorithm development</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td><td class="px-6 py-4">Expect AI to dramatically affect their lives in 3 to 5 years</td><td class="px-6 py-4">66%</td><td class="px-6 py-4 text-slate-500">Up from 60% in the previous year</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td><td class="px-6 py-4">Nervous about AI products and services</td><td class="px-6 py-4">52%</td><td class="px-6 py-4 text-slate-500">A 13 percentage point increase from 2022</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td><td class="px-6 py-4">Organizations using AI in at least one function</td><td class="px-6 py-4">55%</td><td class="px-6 py-4 text-slate-500">Up from 20% in 2017</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td><td class="px-6 py-4">Organizations reporting AI cost reductions / revenue increases</td><td class="px-6 py-4">42% / 59%</td><td class="px-6 py-4 text-slate-500">Evidence of economic benefits alongside social risks</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td><td class="px-6 py-4">U.S. AI-related regulations in 2023</td><td class="px-6 py-4">25</td><td class="px-6 py-4 text-slate-500">Up from one in 2016; 56.3% annual growth</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td><td class="px-6 py-4">FDA-approved AI-related medical devices in 2022</td><td class="px-6 py-4">139</td><td class="px-6 py-4 text-slate-500">12.1% more than 2021 and over 45 times the 2012 total</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Jobin et al. (2019)</td><td class="px-6 py-4">AI ethics guidelines mentioning sustainability</td><td class="px-6 py-4">14 of 84</td><td class="px-6 py-4 text-slate-500">Far fewer than transparency, which appeared in 73 of 84</td>
+                                </tr>
+                                <tr data-category="context" class="finding-row hover:bg-slate-50 dark:hover:bg-slate-850/50 transition-colors">
+                                    <td class="px-6 py-4 font-mono">Stanford HAI (2024)</td><td class="px-6 py-4">Estimated training compute cost: GPT-4 / Gemini Ultra</td><td class="px-6 py-4">$78M / $191M</td><td class="px-6 py-4 text-slate-500">Illustrates the growing resource intensity of frontier models</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -279,9 +423,7 @@
 
                 <div class="col-span-2 lg:col-span-1">
                     <div class="flex items-center gap-2 mb-6">
-                        <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+                        <img src="ethics-favicon.png" alt="" class="w-6 h-6 rounded-md">
                         <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">ETHC.</span>
                     </div>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 pr-4">An academic exploration into the social implications of AI and expert systems in healthcare, finance, and beyond.</p>
@@ -335,6 +477,7 @@
         </div>
     </footer>
 
+    <script src="site-navigation.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
@@ -369,6 +512,72 @@
                     });
                 }
             });
+
+            const datasetInputs = [...document.querySelectorAll('[data-dataset]')];
+            const findingCards = [...document.querySelectorAll('.finding-card')];
+            const findingRows = [...document.querySelectorAll('.finding-row')];
+            const searchInput = document.getElementById('finding-search');
+            const noResults = document.getElementById('no-results');
+            const exportButton = document.getElementById('export-analysis');
+
+            const selectedDatasets = () => new Set(
+                datasetInputs.filter(input => input.checked).map(input => input.dataset.dataset)
+            );
+
+            const refreshFindings = () => {
+                const selected = selectedDatasets();
+                const query = searchInput.value.trim().toLowerCase();
+
+                datasetInputs.forEach(input => {
+                    const label = input.closest('.dataset-option');
+                    label.classList.toggle('bg-teal-50', input.checked);
+                    label.classList.toggle('dark:bg-teal-500/10', input.checked);
+                    label.classList.toggle('border-teal-200', input.checked);
+                    label.classList.toggle('dark:border-teal-500/30', input.checked);
+                    label.classList.toggle('opacity-60', !input.checked);
+                });
+
+                findingCards.forEach(card => {
+                    card.classList.toggle('hidden', !selected.has(card.dataset.category));
+                });
+
+                let visibleRows = 0;
+                findingRows.forEach(row => {
+                    const matchesDataset = selected.has(row.dataset.category);
+                    const matchesSearch = !query || row.textContent.toLowerCase().includes(query);
+                    const visible = matchesDataset && matchesSearch;
+                    row.classList.toggle('hidden', !visible);
+                    if (visible) visibleRows += 1;
+                });
+
+                noResults.classList.toggle('hidden', selected.size > 0);
+                exportButton.disabled = visibleRows === 0;
+                exportButton.classList.toggle('opacity-50', visibleRows === 0);
+                exportButton.classList.toggle('cursor-not-allowed', visibleRows === 0);
+            };
+
+            datasetInputs.forEach(input => input.addEventListener('change', refreshFindings));
+            searchInput.addEventListener('input', refreshFindings);
+
+            exportButton.addEventListener('click', () => {
+                const rows = findingRows.filter(row => !row.classList.contains('hidden'));
+                if (!rows.length) return;
+                const header = ['Source', 'Metric', 'Value', 'Implication'];
+                const csvRows = rows.map(row => [...row.cells].map(cell => cell.textContent.trim()));
+                const escapeCsv = value => `"${value.replaceAll('"', '""')}"`;
+                const csv = [header, ...csvRows].map(row => row.map(escapeCsv).join(',')).join('\n');
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'ethc303-selected-findings.csv';
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                URL.revokeObjectURL(url);
+            });
+
+            refreshFindings();
         });
     </script>
 
