@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Implications of AI &amp; Expert Systems | Research Report</title>
+    <link rel="icon" type="image/png" href="ethics-favicon.png">
+    <link rel="apple-touch-icon" href="ethics-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -1767,6 +1769,256 @@
                 font-size: 3rem;
                 top: 12px;
                 right: 18px;
+            }
+        }
+
+        /* ---------- Tablet and phone refinements ---------- */
+        @media (max-width: 960px) {
+            .layout {
+                width: 100%;
+                margin-top: 64px;
+                padding: 22px 18px 80px;
+                gap: 22px;
+            }
+
+            nav.toc {
+                width: min(84vw, 340px);
+                padding: 20px 12px 32px;
+                overscroll-behavior: contain;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            nav.toc a {
+                min-height: 42px;
+                display: flex;
+                align-items: center;
+            }
+
+            .paper {
+                width: 100%;
+                padding: 38px 34px;
+            }
+
+            .paper[data-time] {
+                padding-top: 58px;
+            }
+
+            .titlepage {
+                padding: 56px 34px 42px;
+            }
+
+            .method-grid,
+            .theory-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .figure-card img {
+                height: auto;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .topbar {
+                height: 60px;
+                padding: 0 12px;
+            }
+
+            .brand {
+                min-width: 0;
+                gap: 8px;
+            }
+
+            .brand-badge {
+                width: 30px;
+                height: 30px;
+            }
+
+            .brand-text {
+                max-width: 48vw;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: .75rem;
+            }
+
+            .brand-text span {
+                display: none;
+            }
+
+            .icon-btn {
+                width: 42px;
+                height: 42px;
+                flex: 0 0 auto;
+            }
+
+            .layout {
+                margin-top: 60px;
+                padding: 12px 10px 64px;
+                gap: 16px;
+            }
+
+            nav.toc {
+                top: 60px;
+                width: min(88vw, 320px);
+            }
+
+            .paper,
+            .titlepage {
+                border-radius: 15px;
+                padding: 28px 18px;
+                margin-bottom: 16px;
+            }
+
+            .paper[data-time] {
+                padding-top: 66px;
+            }
+
+            .titlepage {
+                padding-top: 70px;
+            }
+
+            .section-timer {
+                top: 15px;
+                left: 16px;
+                min-width: 72px;
+                min-height: 38px;
+                padding: 8px 13px;
+                font-size: .75rem;
+            }
+
+            .eyebrow {
+                font-size: .65rem;
+                line-height: 1.5;
+                letter-spacing: .1em;
+            }
+
+            h1.paper-title {
+                font-size: clamp(1.65rem, 8vw, 2.15rem);
+                line-height: 1.12;
+                overflow-wrap: anywhere;
+            }
+
+            .authors {
+                font-size: .93rem;
+                line-height: 1.55;
+            }
+
+            .authors .amp {
+                margin: 0 3px;
+            }
+
+            .affil {
+                font-size: .82rem;
+                line-height: 1.5;
+            }
+
+            .meta-chips {
+                gap: 6px;
+            }
+
+            .chip {
+                padding: 6px 10px;
+                font-size: .68rem;
+            }
+
+            h2 {
+                font-size: 1.35rem;
+                line-height: 1.25;
+                gap: 8px;
+            }
+
+            h3 {
+                font-size: 1.08rem;
+                line-height: 1.35;
+            }
+
+            h3 .tag {
+                margin-left: 6px;
+            }
+
+            p,
+            p.lead,
+            .roadmap-step p {
+                font-size: .96rem;
+                line-height: 1.65;
+                text-align: left;
+                overflow-wrap: anywhere;
+                hyphens: none;
+            }
+
+            .pull-quote,
+            .closing-quote {
+                font-size: 1.25rem;
+                padding-left: 16px;
+            }
+
+            .two-col,
+            .method-grid,
+            .theory-grid,
+            .chart-grid-2,
+            .stat-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .rq-card,
+            .method-card,
+            .theory-card,
+            .stat-card {
+                padding: 15px;
+            }
+
+            .chart-block {
+                padding: 18px 14px;
+            }
+
+            .bar-row {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 7px;
+            }
+
+            .bar-label {
+                width: auto;
+                font-size: .78rem;
+            }
+
+            .bar-track {
+                width: 100%;
+                min-height: 24px;
+            }
+
+            .figure-card {
+                padding: 8px;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+
+            .figure-wrap figcaption {
+                font-size: .72rem;
+                line-height: 1.45;
+            }
+
+            .roadmap {
+                padding-left: 30px;
+            }
+
+            .references li,
+            footer {
+                overflow-wrap: anywhere;
+            }
+
+            footer {
+                padding-left: 18px;
+                padding-right: 18px;
+                text-align: center;
+            }
+
+            #totop {
+                right: 14px;
+                bottom: 14px;
+                width: 46px;
+                height: 46px;
             }
         }
     </style>
