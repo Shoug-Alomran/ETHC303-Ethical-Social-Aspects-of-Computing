@@ -290,20 +290,43 @@
         main > #literature-review { order: 9; }
         main > #appendix { order: 10; }
 
-        .paper[data-time]::after {
-            content: attr(data-time);
+        .section-timer {
             position: absolute;
             top: 18px;
-            right: 20px;
-            padding: 5px 10px;
+            left: 20px;
+            min-width: 66px;
+            padding: 7px 12px;
             border: 1px solid var(--line);
             border-radius: 999px;
             background: var(--surface);
             color: var(--teal-deep);
             font-family: "Inter", sans-serif;
-            font-size: .68rem;
+            font-size: .72rem;
             font-weight: 700;
             letter-spacing: .04em;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(13, 91, 86, .08);
+            transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+            z-index: 4;
+        }
+
+        .section-timer:hover {
+            border-color: var(--teal-mid);
+            background: var(--teal-tint);
+            transform: translateY(-1px);
+        }
+
+        .section-timer.running {
+            color: #fff;
+            border-color: var(--teal-deep);
+            background: var(--teal-deep);
+            box-shadow: 0 7px 20px rgba(13, 91, 86, .22);
+        }
+
+        .section-timer.complete {
+            color: #fff;
+            border-color: #b7791f;
+            background: #b7791f;
         }
 
         .supplemental-section {
@@ -311,7 +334,7 @@
         }
 
         .supplemental-section::before {
-            content: "Supporting material · not part of the 8-minute speaking route";
+            content: "Supporting material";
             display: inline-flex;
             margin-bottom: 18px;
             color: var(--sub);
@@ -2262,6 +2285,70 @@
                 var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
                 root.setAttribute('data-theme', next);
                 try { localStorage.setItem('report-theme', next); } catch (e) { }
+            });
+
+            // ---------- Click-activated section timers ----------
+            var activeTimerButton = null;
+
+            function formatTimer(totalSeconds) {
+                var minutes = Math.floor(totalSeconds / 60);
+                var seconds = totalSeconds % 60;
+                return minutes + ':' + String(seconds).padStart(2, '0');
+            }
+
+            function pauseTimer(button) {
+                if (!button || !button._timerInterval) return;
+                clearInterval(button._timerInterval);
+                button._timerInterval = null;
+                button.classList.remove('running');
+                button.setAttribute('aria-label', 'Resume section timer at ' + button.textContent);
+                if (activeTimerButton === button) activeTimerButton = null;
+            }
+
+            function startTimer(button) {
+                if (activeTimerButton && activeTimerButton !== button) pauseTimer(activeTimerButton);
+
+                if (button._remaining <= 0) {
+                    button._remaining = button._duration;
+                    button.classList.remove('complete');
+                    button.textContent = formatTimer(button._remaining);
+                }
+
+                button.classList.add('running');
+                button.setAttribute('aria-label', 'Pause section timer at ' + button.textContent);
+                activeTimerButton = button;
+                button._timerInterval = setInterval(function () {
+                    button._remaining -= 1;
+                    button.textContent = formatTimer(Math.max(0, button._remaining));
+                    button.setAttribute('aria-label', 'Pause section timer at ' + button.textContent);
+
+                    if (button._remaining <= 0) {
+                        clearInterval(button._timerInterval);
+                        button._timerInterval = null;
+                        button.classList.remove('running');
+                        button.classList.add('complete');
+                        button.textContent = 'Done';
+                        button.setAttribute('aria-label', 'Restart completed section timer');
+                        activeTimerButton = null;
+                    }
+                }, 1000);
+            }
+
+            Array.prototype.forEach.call(document.querySelectorAll('.paper[data-time]'), function (section) {
+                var parts = section.getAttribute('data-time').split(':');
+                var duration = (parseInt(parts[0], 10) * 60) + parseInt(parts[1], 10);
+                var button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'section-timer';
+                button._duration = duration;
+                button._remaining = duration;
+                button.textContent = formatTimer(duration);
+                button.setAttribute('aria-label', 'Start ' + section.getAttribute('data-chapter') + ' timer for ' + button.textContent);
+                button.addEventListener('click', function () {
+                    if (button._timerInterval) pauseTimer(button);
+                    else startTimer(button);
+                });
+                section.appendChild(button);
             });
 
             // ---------- Collapsible table of contents ----------
