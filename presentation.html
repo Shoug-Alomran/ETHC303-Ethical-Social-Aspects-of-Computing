@@ -275,6 +275,51 @@
 
         main {
             min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main > #titlepage { order: 1; }
+        main > #introduction { order: 2; }
+        main > #methodology { order: 3; }
+        main > #analysis { order: 4; }
+        main > #recommendations { order: 5; }
+        main > #conclusion { order: 6; }
+        main > #references { order: 7; }
+        main > #abstract { order: 8; }
+        main > #literature-review { order: 9; }
+        main > #appendix { order: 10; }
+
+        .paper[data-time]::after {
+            content: attr(data-time);
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            padding: 5px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: var(--surface);
+            color: var(--teal-deep);
+            font-family: "Inter", sans-serif;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
+        .supplemental-section {
+            opacity: .78;
+        }
+
+        .supplemental-section::before {
+            content: "Supporting material · not part of the 8-minute speaking route";
+            display: inline-flex;
+            margin-bottom: 18px;
+            color: var(--sub);
+            font-family: "Inter", sans-serif;
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
         }
 
         .paper {
@@ -1757,27 +1802,28 @@
     <div class="layout" id="report-layout">
         <nav class="toc" id="toc">
             <div id="toc-indicator"></div>
-            <div class="toc-label">Contents</div>
-            <a href="#titlepage">Title &amp; Authors</a>
-            <a href="#abstract">Abstract</a>
-            <a href="#introduction">Introduction</a>
-            <a href="#literature-review">Literature Review</a>
-            <a href="#methodology">Methodology</a>
-            <a href="#analysis">Analysis</a>
+            <div class="toc-label">8-minute speaking route</div>
+            <a href="#titlepage">Opening <span aria-hidden="true">·</span> 0:30</a>
+            <a href="#introduction">Topic Introduction <span aria-hidden="true">·</span> 1:00</a>
+            <a href="#methodology">Methodology <span aria-hidden="true">·</span> 1:15</a>
+            <a href="#analysis">Findings &amp; Analysis <span aria-hidden="true">·</span> 3:15</a>
             <a href="#ethical-implications" class="sub">Ethical Implications</a>
             <a href="#societal-implications" class="sub">Societal Implications</a>
             <a href="#sustainability-implications" class="sub">Sustainability Implications</a>
             <a href="#ethical-theories" class="sub">Ethical Theories</a>
             <a href="#ai-expert-systems-figure" class="sub">Figure: AI &amp; Expert Systems</a>
-            <a href="#recommendations">Recommendations</a>
-            <a href="#conclusion">Conclusion</a>
+            <a href="#recommendations">Recommendations <span aria-hidden="true">·</span> 1:15</a>
+            <a href="#conclusion">Conclusion <span aria-hidden="true">·</span> 0:45</a>
+            <div class="toc-label" style="padding-top:14px">Supporting material</div>
             <a href="#references">References</a>
+            <a href="#abstract">Abstract</a>
+            <a href="#literature-review">Literature Review</a>
             <a href="#appendix">Appendix</a>
         </nav>
 
         <main>
 
-            <section id="titlepage" class="paper titlepage" data-chapter="Title &amp; Authors">
+            <section id="titlepage" class="paper titlepage" data-chapter="Opening" data-time="0:30">
                 <div class="spotlight" id="spotlight"></div>
                 <div class="eyebrow">Prince Sultan University · Computer Science Department</div>
                 <h1 class="paper-title">Social Implications of Artificial Intelligence &amp; Expert Systems</h1>
@@ -1788,12 +1834,13 @@
                     <span class="chip">ETHC 303 · Computer Ethics</span>
                     <span class="chip">Dr. Najla Althuniyan</span>
                     <span class="chip">July 20, 2026</span>
+                    <span class="chip">8-minute presentation</span>
                 </div>
             </section>
 
-            <section id="abstract" class="paper tint-gold" data-chapter="Abstract">
-                <span class="ghost-num" aria-hidden="true">01</span>
-                <h2><span class="num">01</span>Abstract</h2>
+            <section id="abstract" class="paper tint-gold supplemental-section" data-chapter="Abstract">
+                <span class="ghost-num" aria-hidden="true">S1</span>
+                <h2><span class="num">S1</span>Abstract</h2>
                 <hr class="rule">
                 <p class="lead">AI and Expert Systems are reshaping health care, education, finance, manufacturing,
                     and cybersecurity through greater efficiency and better decision making. This report examines
@@ -1806,9 +1853,9 @@
                     offset by AI's potential to help lower carbon emissions.</p>
             </section>
 
-            <section id="introduction" class="paper" data-chapter="Introduction">
-                <span class="ghost-num" aria-hidden="true">02</span>
-                <h2><span class="num">02</span>Introduction</h2>
+            <section id="introduction" class="paper" data-chapter="Topic Introduction" data-time="1:00">
+                <span class="ghost-num" aria-hidden="true">01</span>
+                <h2><span class="num">01</span>Topic Introduction</h2>
                 <hr class="rule">
                 <div class="two-col">
                     <div>
@@ -1838,9 +1885,9 @@
                 </div>
             </section>
 
-            <section id="literature-review" class="paper tint-blue" data-chapter="Literature Review">
-                <span class="ghost-num" aria-hidden="true">03</span>
-                <h2><span class="num">03</span>Literature Review</h2>
+            <section id="literature-review" class="paper tint-blue supplemental-section" data-chapter="Literature Review">
+                <span class="ghost-num" aria-hidden="true">S2</span>
+                <h2><span class="num">S2</span>Literature Review</h2>
                 <hr class="rule">
                 <p>Current research shows AI's immense potential, especially in health care: the World Health
                     Organization (2021) points to real progress in drug discovery, genomics, radiology, pathology, and
@@ -1892,9 +1939,9 @@
                     environmental effects together, not one at a time.</p>
             </section>
 
-            <section id="methodology" class="paper tint-olive" data-chapter="Methodology">
-                <span class="ghost-num" aria-hidden="true">04</span>
-                <h2><span class="num">04</span>Methodology</h2>
+            <section id="methodology" class="paper tint-olive" data-chapter="Methodology" data-time="1:15">
+                <span class="ghost-num" aria-hidden="true">02</span>
+                <h2><span class="num">02</span>Methodology</h2>
                 <hr class="rule">
                 <p>This study takes a literature review (secondary research) approach, synthesizing existing studies
                     and reports on the societal impact of AI and Expert Systems from credible international
@@ -1924,9 +1971,9 @@
                     were then evaluated through the three ethical lenses above.</p>
             </section>
 
-            <section id="analysis" class="paper" data-chapter="Analysis">
-                <span class="ghost-num" aria-hidden="true">05</span>
-                <h2><span class="num">05</span>Analysis</h2>
+            <section id="analysis" class="paper" data-chapter="Findings &amp; Analysis" data-time="3:15">
+                <span class="ghost-num" aria-hidden="true">03</span>
+                <h2><span class="num">03</span>Findings &amp; Analysis</h2>
                 <hr class="rule">
 
                 <div class="chart-block">
@@ -2007,9 +2054,9 @@
                 </div>
             </section>
 
-            <section id="recommendations" class="paper tint-teal" data-chapter="Recommendations">
-                <span class="ghost-num" aria-hidden="true">06</span>
-                <h2><span class="num">06</span>Recommendations</h2>
+            <section id="recommendations" class="paper tint-teal" data-chapter="Recommendations" data-time="1:15">
+                <span class="ghost-num" aria-hidden="true">04</span>
+                <h2><span class="num">04</span>Recommendations</h2>
                 <hr class="rule">
                 <div class="roadmap">
                     <div class="roadmap-step" data-step="1">
@@ -2033,9 +2080,9 @@
                 </div>
             </section>
 
-            <section id="conclusion" class="paper tint-dark" data-chapter="Conclusion">
-                <span class="ghost-num" aria-hidden="true">07</span>
-                <h2><span class="num">07</span>Conclusion</h2>
+            <section id="conclusion" class="paper tint-dark" data-chapter="Conclusion" data-time="0:45">
+                <span class="ghost-num" aria-hidden="true">05</span>
+                <h2><span class="num">05</span>Conclusion</h2>
                 <hr class="rule">
                 <p>This paper examined the ethical, societal, and sustainability implications of AI and Expert
                     Systems. Despite real advantages for health care, education, economics, and industry, these
@@ -2049,9 +2096,9 @@
                 <p class="closing-sign">Shoug Fawaz Abdullah Alomran &amp; Layan Abdulaziz Alnasser</p>
             </section>
 
-            <section id="references" class="paper" data-chapter="References">
-                <span class="ghost-num" aria-hidden="true">08</span>
-                <h2><span class="num">08</span>References</h2>
+            <section id="references" class="paper supplemental-section" data-chapter="References">
+                <span class="ghost-num" aria-hidden="true">S3</span>
+                <h2><span class="num">S3</span>References</h2>
                 <hr class="rule">
                 <ul class="references">
                     <li>Jain, A., Brooks, J. R., Alford, C. C., Chang, C. S., Mueller, N. M., Umscheid, C. A., &amp;
@@ -2083,9 +2130,9 @@
                 </ul>
             </section>
 
-            <section id="appendix" class="paper" data-chapter="Appendix">
-                <span class="ghost-num" aria-hidden="true">09</span>
-                <h2><span class="num">09</span>Appendix</h2>
+            <section id="appendix" class="paper supplemental-section" data-chapter="Appendix">
+                <span class="ghost-num" aria-hidden="true">S4</span>
+                <h2><span class="num">S4</span>Appendix</h2>
                 <hr class="rule">
                 <p class="lead" style="margin-bottom:22px;">Supporting excerpts from the primary sources cited
                     throughout this report. Click a card to expand it.</p>
