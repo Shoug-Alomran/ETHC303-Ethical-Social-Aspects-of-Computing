@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (footerInner && !footerInner.querySelector('[data-blueprint-credit]')) {
         const credit = document.createElement('div');
         credit.dataset.blueprintCredit = '';
-        credit.className = 'mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 dark:text-slate-500';
+        credit.className = 'mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 dark:text-slate-400';
         credit.innerHTML = 'Made by <a href="https://blueprint.shoug-tech.com/" target="_blank" rel="noopener noreferrer" class="font-semibold text-teal-600 dark:text-teal-400 hover:underline">Blueprint</a>';
         footerInner.appendChild(credit);
     }
