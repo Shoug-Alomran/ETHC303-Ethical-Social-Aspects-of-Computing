@@ -32,6 +32,30 @@
         .reveal-delay-2 { transition-delay: 200ms; }
         .reveal-delay-3 { transition-delay: 300ms; }
 
+        .task-split-cta {
+            color: #5b21b6;
+            background: rgba(237, 233, 254, 0.9);
+            border-color: #8b5cf6;
+        }
+
+        .task-split-cta:hover {
+            color: #4c1d95;
+            background: #ddd6fe;
+            border-color: #7c3aed;
+        }
+
+        html.dark .task-split-cta {
+            color: #ede9fe;
+            background: rgba(139, 92, 246, 0.16);
+            border-color: rgba(167, 139, 250, 0.75);
+        }
+
+        html.dark .task-split-cta:hover {
+            color: #ffffff;
+            background: rgba(139, 92, 246, 0.28);
+            border-color: #c4b5fd;
+        }
+
         .path-anim {
             stroke-dasharray: 20;
             animation: dash 30s linear infinite;
@@ -653,7 +677,7 @@
                 <a href="output/pdf/ethc303-presentation.pdf" download class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/80 dark:bg-slate-800 text-slate-800 dark:text-white font-semibold border border-slate-300 dark:border-slate-700 hover:border-violet-400 dark:hover:border-violet-400 transition-all duration-300">
                     Download Presentation PDF
                 </a>
-                <a href="task-split.html" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-violet-400/60 bg-violet-500/10 text-violet-200 font-semibold hover:bg-violet-500/20 hover:border-violet-300 hover:-translate-y-1 transition-all duration-300">
+                <a href="task-split.html" class="task-split-cta w-full sm:w-auto px-8 py-4 rounded-xl border font-semibold hover:-translate-y-1 transition-all duration-300">
                     Presenter Task Split
                 </a>
             </div>
