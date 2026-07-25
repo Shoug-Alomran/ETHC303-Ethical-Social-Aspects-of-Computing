@@ -577,6 +577,19 @@
             padding: 6px 14px;
         }
 
+        .live-presentation-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 18px;
+            color: var(--teal-deep);
+            font-family: "Inter", sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
         /* ---------- Section headings ---------- */
         h2 {
             font-family: "Fraunces", serif;
@@ -916,7 +929,9 @@
             .topbar,
             nav.toc,
             #totop,
-            #progress {
+            #progress,
+            #progress-ticks,
+            .section-timer {
                 display: none !important;
             }
 
@@ -932,6 +947,16 @@
                 opacity: 1 !important;
                 transform: none !important;
                 break-inside: avoid;
+            }
+
+            details.appendix-card > .appendix-body {
+                display: block !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+            details.appendix-card summary .chevron {
+                display: none !important;
             }
         }
 
@@ -2188,6 +2213,9 @@
                     <span class="chip">July 23, 2026</span>
                     <span class="chip">8-minute presentation</span>
                 </div>
+                <a class="live-presentation-link" href="https://ethics.shoug-tech.com/presentation.html">
+                    Open the live interactive presentation
+                </a>
             </section>
 
             <section id="abstract" class="paper tint-gold supplemental-section" data-chapter="Abstract">
@@ -2364,11 +2392,11 @@
 
                 <div class="stat-strip">
                     <div class="stat-card">
-                        <span class="stat-value"><span class="stat-counter" data-count="1.287" data-decimals="3" data-suffix=" GWh">0 GWh</span></span>
+                        <span class="stat-value"><span class="stat-counter" data-count="1.287" data-decimals="3" data-suffix=" GWh">1.287 GWh</span></span>
                         <span class="stat-label">Energy to train a model like ChatGPT, roughly 120 U.S. households/year</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value">-<span class="stat-counter" data-count="0.0013" data-decimals="4" data-suffix="%">0%</span></span>
+                        <span class="stat-value">-<span class="stat-counter" data-count="0.0013" data-decimals="4" data-suffix="%">0.0013%</span></span>
                         <span class="stat-label">Carbon emissions change per 1% growth in AI development</span>
                     </div>
                 </div>
@@ -2487,7 +2515,7 @@
                 <h2><span class="num">S4</span>Appendix</h2>
                 <hr class="rule">
                 <p class="lead" style="margin-bottom:22px;">Supporting excerpts from the primary sources cited
-                    throughout this report. Click a card to expand it.</p>
+                    throughout this report.</p>
 
                 <details class="appendix-card">
                     <summary>AI Training and Energy Consumption
@@ -2922,6 +2950,18 @@
                 }, { threshold: 0.4 });
                 counters.forEach(function (c) { counterIO.observe(c); });
             }
+
+            window.addEventListener('beforeprint', function () {
+                counters.forEach(function (el) {
+                    var target = parseFloat(el.getAttribute('data-count'));
+                    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+                    var suffix = el.getAttribute('data-suffix') || '';
+                    if (!isNaN(target)) el.textContent = target.toFixed(decimals) + suffix;
+                });
+                document.querySelectorAll('details.appendix-card').forEach(function (details) {
+                    details.open = true;
+                });
+            });
 
             // ---------- Animated appendix expand/collapse ----------
             Array.prototype.forEach.call(document.querySelectorAll('details.appendix-card'), function (details) {
