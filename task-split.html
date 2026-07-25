@@ -538,6 +538,55 @@
       color: var(--ink);
     }
 
+    .presentation-brief {
+      background: linear-gradient(135deg, rgba(20, 184, 166, .1), rgba(16, 185, 129, .04));
+      border: 1px solid rgba(20, 184, 166, .3);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 24px;
+    }
+
+    .presentation-brief strong {
+      color: var(--ink);
+    }
+
+    .presentation-brief p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .presentation-brief p + p {
+      margin-top: 10px;
+    }
+
+    .presentation-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .presentation-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 15px;
+      border-radius: 10px;
+      background: var(--teal-600);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .presentation-links a.secondary {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
     footer {
       margin-top: 64px;
       padding-top: 20px;
@@ -565,7 +614,7 @@
 
   <div class="wrap">
 
-    <a class="back" href="index.html">
+    <a class="back" href="https://ethics.shoug-tech.com/">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
       </svg>
@@ -583,7 +632,7 @@
         </div>
       </div>
       <div class="meta-right">
-        <div>10-page paper · shared presentation</div>
+        <div>10-page paper · 8-minute presentation</div>
         <div>Target split ≈ 65–70 / 30–35</div>
       </div>
     </header>
@@ -696,27 +745,39 @@
 
     <section>
       <h2 class="section-eyebrow">Shared Delivery</h2>
-      <h3 class="section-title">Presentation split</h3>
-      <p class="lede">Each person presents the parts they wrote; nobody explains someone else's section from a slide
-        they didn't build.</p>
+      <h3 class="section-title">Instructor-aligned presentation split</h3>
+      <p class="lede">Introduce the topic briefly, move immediately to methodology, and then present the remaining
+        analytical sections. The abstract and literature review stay in the supporting material rather than the live
+        speaking route.</p>
+
+      <div class="presentation-brief">
+        <p><strong>Instructor direction:</strong> introduce the topic, jump immediately to methodology, continue with
+          the remaining paper sections, and plan for approximately eight minutes.</p>
+        <p><strong>Speaking order:</strong> Opening 0:30 · Topic Introduction 1:00 · Methodology 1:15 · Findings and
+          Analysis 3:15 · Recommendations 1:15 · Conclusion 0:45.</p>
+        <div class="presentation-links">
+          <a href="presentation.html">Open live presentation</a>
+          <a class="secondary" href="https://ethics.shoug-tech.com/">Back to project website</a>
+        </div>
+      </div>
 
       <div class="present-grid">
         <div class="present-card shoug">
           <h4>Shoug explains</h4>
           <ol>
-            <li>Introduction</li>
-            <li>Literature Review</li>
-            <li>Ethical Analysis</li>
-            <li>Recommendations</li>
+            <li>Opening and topic introduction · 1:30 total</li>
+            <li>Ethical and societal findings within the shared analysis · about 2:00</li>
+            <li>Recommendations · 1:15</li>
+            <li>Hands over directly to Layan for methodology after the introduction</li>
           </ol>
         </div>
         <div class="present-card layan">
           <h4>Layan explains</h4>
           <ol>
-            <li>AI overview</li>
-            <li>Methodology</li>
-            <li>Key findings</li>
-            <li>Conclusion</li>
+            <li>Methodology immediately after the introduction · 1:15</li>
+            <li>Sustainability findings, ethical theories, and key statistics · about 1:15</li>
+            <li>Conclusion · 0:45</li>
+            <li>Supports transitions and final questions</li>
           </ol>
         </div>
       </div>
@@ -791,7 +852,7 @@
 
     <footer>
       <span>ETHC303 group paper: task allocation</span>
-      <a href="index.html">← back to ethics.shoug-tech.com</a>
+      <a href="https://ethics.shoug-tech.com/">← back to ethics.shoug-tech.com</a>
     </footer>
 
   </div>
