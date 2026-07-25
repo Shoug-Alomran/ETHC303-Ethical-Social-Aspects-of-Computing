@@ -194,6 +194,35 @@
             height: 18px;
         }
 
+        .download-btn {
+            min-height: 38px;
+            padding: 0 13px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            color: var(--ink);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            font-family: "Inter", sans-serif;
+            font-size: .75rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s, transform .15s, border-color .2s;
+        }
+
+        .download-btn:hover {
+            background: var(--teal-tint);
+            border-color: var(--teal-mid);
+            transform: translateY(-1px);
+        }
+
+        .download-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
         #toc-toggle {
             display: flex;
         }
@@ -1876,6 +1905,17 @@
                 flex: 0 0 auto;
             }
 
+            .download-btn {
+                width: 42px;
+                height: 42px;
+                min-height: 42px;
+                padding: 0;
+            }
+
+            .download-btn span {
+                display: none;
+            }
+
             .layout {
                 margin-top: 60px;
                 padding: 6px 10px 64px;
@@ -2082,6 +2122,15 @@
                     Report</span></div>
         </div>
         <div class="topbar-actions">
+            <a class="download-btn" href="output/pdf/ethc303-presentation.pdf" download aria-label="Download presentation PDF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 3v12"></path>
+                    <path d="m7 10 5 5 5-5"></path>
+                    <path d="M5 21h14"></path>
+                </svg>
+                <span>Download PDF</span>
+            </a>
             <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
                 <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round">
