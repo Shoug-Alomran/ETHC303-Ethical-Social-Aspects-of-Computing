@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const footerResourceList = [...document.querySelectorAll('footer h4')]
+    const footerResourceList = [...document.querySelectorAll('footer h2, footer h4')]
         .find(heading => heading.textContent.trim() === 'Resources')
         ?.parentElement.querySelector('ul');
     if (footerResourceList && !footerResourceList.querySelector('a[href="presentation.html"]')) {
@@ -95,11 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const footer = document.querySelector('footer');
+    footer?.classList.remove('pt-16', 'pb-8');
+    footer?.classList.add('pt-10', 'pb-6');
     const footerInner = footer?.querySelector(':scope > div');
+    const footerGrid = footerInner?.querySelector(':scope > .grid');
+    footerGrid?.classList.remove('mb-12');
+    footerGrid?.classList.add('mb-8');
     if (footerInner && !footerInner.querySelector('[data-blueprint-credit]')) {
         const credit = document.createElement('div');
         credit.dataset.blueprintCredit = '';
-        credit.className = 'mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 dark:text-slate-400';
+        credit.className = 'mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 dark:text-slate-400';
         credit.innerHTML = 'Made by <a href="https://blueprint.shoug-tech.com/" target="_blank" rel="noopener noreferrer" class="font-semibold text-teal-600 dark:text-teal-400 hover:underline">Blueprint</a>';
         footerInner.appendChild(credit);
     }

@@ -306,10 +306,11 @@
         main > #analysis { order: 4; }
         main > #recommendations { order: 5; }
         main > #conclusion { order: 6; }
-        main > #references { order: 7; }
-        main > #abstract { order: 8; }
-        main > #literature-review { order: 9; }
-        main > #appendix { order: 10; }
+        main > #task-split { order: 7; }
+        main > #references { order: 8; }
+        main > #abstract { order: 9; }
+        main > #literature-review { order: 10; }
+        main > #appendix { order: 11; }
 
         .section-timer {
             position: absolute;
@@ -775,13 +776,13 @@
         /* ---------- Footer ---------- */
         footer {
             max-width: 1320px;
-            margin: 0 auto 60px;
-            padding: 0 24px;
+            margin: 0 auto 24px;
+            padding: 0 18px;
             text-align: center;
             font-family: "Inter", sans-serif;
             color: var(--sub);
-            font-size: .85rem;
-            line-height: 1.8;
+            font-size: .78rem;
+            line-height: 1.5;
         }
 
         footer .fname {
@@ -794,7 +795,7 @@
             height: 1px;
             background: var(--line);
             max-width: 220px;
-            margin: 0 auto 22px;
+            margin: 0 auto 12px;
         }
 
         /* ---------- Back to top ---------- */
@@ -836,6 +837,11 @@
             .layout {
                 grid-template-columns: 1fr;
                 padding-top: 20px;
+            }
+
+            .layout > main {
+                grid-column: 1;
+                grid-row: 1;
             }
 
             .layout.toc-collapsed {
@@ -1514,6 +1520,85 @@
             line-height: 1.55;
         }
 
+        /* ---------- Presenter task split ---------- */
+        .task-split-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin: 8px 0 22px;
+        }
+
+        .speaker-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .speaker-card:first-child {
+            border-top: 4px solid var(--teal-deep);
+        }
+
+        .speaker-card:last-child {
+            border-top: 4px solid var(--gold);
+        }
+
+        .speaker-card h3 {
+            margin: 0 0 4px;
+            font-size: 1.25rem;
+        }
+
+        .speaker-time {
+            display: inline-flex;
+            margin-bottom: 14px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: var(--teal-tint);
+            color: var(--teal-deep);
+            font-family: "Inter", sans-serif;
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        .speaker-card ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--sub);
+        }
+
+        .speaker-card li {
+            margin: 7px 0;
+        }
+
+        .handoff-note {
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: var(--gold-tint);
+            color: var(--ink);
+            font-family: "Inter", sans-serif;
+            font-size: .9rem;
+            text-align: center;
+        }
+
+        .website-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 18px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: var(--teal-deep);
+            color: #fff;
+            font-family: "Inter", sans-serif;
+            font-size: .85rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .website-link:hover {
+            filter: brightness(1.08);
+        }
+
         /* ---------- Charts ---------- */
         .chart-block {
             background: var(--surface);
@@ -1827,7 +1912,8 @@
             }
 
             .method-grid,
-            .theory-grid {
+            .theory-grid,
+            .task-split-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
@@ -1979,6 +2065,7 @@
             .two-col,
             .method-grid,
             .theory-grid,
+            .task-split-grid,
             .chart-grid-2,
             .stat-strip {
                 grid-template-columns: 1fr;
@@ -2113,6 +2200,7 @@
             <a href="#recommendations">Recommendations <span aria-hidden="true">·</span> 1:15</a>
             <a href="#conclusion">Conclusion <span aria-hidden="true">·</span> 0:45</a>
             <div class="toc-label" style="padding-top:14px">Supporting material</div>
+            <a href="#task-split">Presenter Task Split</a>
             <a href="#references">References</a>
             <a href="#abstract">Abstract</a>
             <a href="#literature-review">Literature Review</a>
@@ -2394,9 +2482,42 @@
                 <p class="closing-sign">Shoug Fawaz Abdullah Alomran &amp; Layan Abdulaziz Alnasser</p>
             </section>
 
-            <section id="references" class="paper supplemental-section" data-chapter="References">
+            <section id="task-split" class="paper tint-gold supplemental-section" data-chapter="Presenter Task Split">
                 <span class="ghost-num" aria-hidden="true">S3</span>
-                <h2><span class="num">S3</span>References</h2>
+                <h2><span class="num">S3</span>Presenter Task Split</h2>
+                <hr class="rule">
+                <p class="lead">The eight-minute route is divided evenly. The presentation moves directly from the
+                    topic introduction to methodology, following the instructor's guidance.</p>
+                <div class="task-split-grid">
+                    <article class="speaker-card">
+                        <h3>Shoug Alomran</h3>
+                        <span class="speaker-time">4:00 total</span>
+                        <ul>
+                            <li>Opening: 0:30</li>
+                            <li>Topic introduction: 1:00</li>
+                            <li>Methodology: 1:15</li>
+                            <li>Ethical and societal findings: 1:15</li>
+                        </ul>
+                    </article>
+                    <article class="speaker-card">
+                        <h3>Layan Alnasser</h3>
+                        <span class="speaker-time">4:00 total</span>
+                        <ul>
+                            <li>Sustainability findings: 0:40</li>
+                            <li>Ethical theories and Figure 1: 1:20</li>
+                            <li>Recommendations: 1:15</li>
+                            <li>Conclusion: 0:45</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="handoff-note"><strong>Handoff:</strong> Shoug finishes the societal implications, then
+                    Layan begins with sustainability implications.</div>
+                <a class="website-link" href="index.html">Return to the research website</a>
+            </section>
+
+            <section id="references" class="paper supplemental-section" data-chapter="References">
+                <span class="ghost-num" aria-hidden="true">S4</span>
+                <h2><span class="num">S4</span>References</h2>
                 <hr class="rule">
                 <ul class="references">
                     <li>Jain, A., Brooks, J. R., Alford, C. C., Chang, C. S., Mueller, N. M., Umscheid, C. A., &amp;
@@ -2429,8 +2550,8 @@
             </section>
 
             <section id="appendix" class="paper supplemental-section" data-chapter="Appendix">
-                <span class="ghost-num" aria-hidden="true">S4</span>
-                <h2><span class="num">S4</span>Appendix</h2>
+                <span class="ghost-num" aria-hidden="true">S5</span>
+                <h2><span class="num">S5</span>Appendix</h2>
                 <hr class="rule">
                 <p class="lead" style="margin-bottom:22px;">Supporting excerpts from the primary sources cited
                     throughout this report. Click a card to expand it.</p>
