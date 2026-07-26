@@ -6,6 +6,14 @@ This repository is a documentation website for my ETHC303 group research project
 
 Live site: https://ethics.shoug-tech.com
 
+## Copyright and ownership
+
+The research paper, presentation, original written analysis, and jointly created academic materials are copyright 2026 Shoug Fawaz Abdullah Alomran and Layan Abdulaziz Alnasser.
+
+The original website design, source code, interface, layouts, and website-specific graphics are copyright 2026 Shoug Fawaz Abdullah Alomran. The website was created by Shoug through Blueprint.
+
+All rights are reserved. No open-source or content-reuse license is granted by this repository. See [`COPYRIGHT.md`](COPYRIGHT.md) and the public [Copyright & Ownership](https://ethics.shoug-tech.com/copyright.html) notice.
+
 ## Deployment
 
 The site is deployed automatically to GitHub Pages via a GitHub Actions workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) on every push to `main`. The custom domain is configured through [`CNAME`](CNAME).
